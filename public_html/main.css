@@ -21,7 +21,7 @@ a {
 .origin-button {
   position: absolute;
   margin: auto;
-  top: 44vh;
+  top: 40vh;
   left: 36vw;
   width: 30%;
   text-align: center;
@@ -91,7 +91,7 @@ animation-duration: 1s;
 
 .to-anchor {
   position: absolute;
-  top: 89.5vh;
+  top: 85vh;
   right: 13vw;
   width: 47%;
   text-align: center;
@@ -104,7 +104,7 @@ animation-duration: 1s;
 }
 
 .to-anchor2 {
-  left: 85vw;
+  left: 83vw;
   position: absolute;
   top: 91.5vh;
   right: 0vw;
