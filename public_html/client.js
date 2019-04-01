@@ -20,7 +20,7 @@ if ("geolocation" in navigator) {
   // get our position every interval
     setInterval(function(){
 
-      $('.our-distance').text( 'distance from anchor: ' + ourDistance + ' feet')
+      $('.our-distance').text(ourDistance )
 
 
       socket.emit('get-origin-point');
@@ -32,7 +32,7 @@ if ("geolocation" in navigator) {
         console.log(position.coords.longitude)
 
         //distance from the gd origin point
-        let gd = miles2feet( calcGeoDistance(position.coords.latitude, position.coords.longitude, storedOriginPoint.position.coords.latitude, storedOriginPoint.position.coords.longitude ) )
+        let gd = miles2feet( calcGeoDistance(position.coords.latitude, position.coords.longitude, storedOriginPoint.lat, storedOriginPoint.long ) )
 
         if(gd <= ourDistance){
           $('.current-distance-away').text( Math.round( gd ) )
