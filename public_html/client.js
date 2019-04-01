@@ -3,7 +3,7 @@ let socket = io.connect();
 let storedOriginPoint;
 // let ourDistance = Math.random() * 100;
 
-let ourDistance = 40
+let ourDistance = 40;
 
 socket.on('origin-point',function(incomingPosition){
 
@@ -17,12 +17,10 @@ socket.on('origin-point',function(incomingPosition){
 if ("geolocation" in navigator) {
   /* geolocation is available */
 
-
-
   // get our position every interval
     setInterval(function(){
 
-      $('.our-distance').text(ourDistance)
+      $('.our-distance').text( 'distance from anchor: ' + ourDistance + ' feet')
 
 
       socket.emit('get-origin-point');
@@ -33,7 +31,7 @@ if ("geolocation" in navigator) {
         console.log(position.coords.latitude)
         console.log(position.coords.longitude)
 
-        //distance drom the ourigin point
+        //distance drom the ou origin point
         let gd = miles2feet( calcGeoDistance(position.coords.latitude, position.coords.longitude, storedOriginPoint.lat, storedOriginPoint.lon ) )
 
         if(gd <= ourDistance){
