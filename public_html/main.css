@@ -21,7 +21,7 @@ a {
 .origin-button {
   position: absolute;
   margin: auto;
-  top: 40vh;
+  top: 35vh;
   left: 36vw;
   width: 30%;
   text-align: center;
@@ -150,7 +150,7 @@ animation-duration: 1s;
   position: absolute;
   /* margin: auto; */
   line-height: 1.2em;
-  top: 40vh;
+  top: 30vh;
   left: 27vw;
   width: 50%;
   text-align: center;
