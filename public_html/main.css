@@ -53,7 +53,7 @@ animation-duration: 1s;
   font-weight: 700;
   font-style: normal;
   position: absolute;
-  bottom: 0vh;
+  bottom: 1vh;
   right: 87vw;
   text-align: center;
   padding: 5px;
@@ -91,7 +91,7 @@ animation-duration: 1s;
 
 .to-anchor {
   position: absolute;
-  top: 93.5vh;
+  top: 89.5vh;
   right: 13vw;
   width: 47%;
   text-align: center;
@@ -104,7 +104,7 @@ animation-duration: 1s;
 }
 
 .to-anchor2 {
-  left: 90vw;
+  left: 85vw;
   position: absolute;
   top: 91.5vh;
   right: 0vw;
