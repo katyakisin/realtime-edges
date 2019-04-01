@@ -91,7 +91,7 @@ animation-duration: 1s;
 
 .to-anchor {
   position: absolute;
-  top: 70vh;
+  top: 75vh;
   right: 18vw;
   width: 47%;
   text-align: center;
@@ -106,7 +106,7 @@ animation-duration: 1s;
 .to-anchor2 {
   left: 86vw;
   position: absolute;
-  top: 68vh;
+  top: 72.5vh;
   /* width: 44%; */
   /* text-align: center; */
   /* padding: 5px; */
