@@ -1,8 +1,8 @@
 html {
   background-color: #F2F1E8;
-  box-sizing: border-box;
-  margin: 0;
 }
+
+@media screen and (min-width: 440px) {
 
 body {
   width: 100vw;
@@ -19,31 +19,31 @@ a {
 .origin-button {
   position: absolute;
   margin: auto;
-  top: 40vh;
+  top: 44vh;
   left: 36vw;
-  width: 24%;
+  width: 30%;
   text-align: center;
   line-height: 1em;
   background-color: #29698B;
   padding: 5px;
-  font-size: 25px;
+  font-size: 55px;
   box-shadow: 5px 5px #00034B;
   color: #F2F1E8;
 }
 
 .origin-pin {
   display: none;
-  position: absolute;
-  margin: auto;
-  top: 70vh;
-  left: 36vw;
-  width: 24%;
-  text-align: center;
-  padding: 5px;
-  font-size: 25px;
-  color: #00034B;
-  animation-name: slideInDown;
-  animation-duration: 1s;
+position: absolute;
+margin: auto;
+top: 65vh;
+    left: 39vw;
+width: 24%;
+text-align: center;
+padding: 5px;
+font-size: 55px;
+color: #00034B;
+animation-name: slideInDown;
+animation-duration: 1s;
 }
 
 .nav-back {
@@ -51,13 +51,12 @@ a {
   font-weight: 700;
   font-style: normal;
   position: absolute;
-  margin: auto;
   bottom: 4vh;
   right: 66vw;
   width: 40%;
   text-align: center;
   padding: 5px;
-  font-size: 40px;
+  font-size: 95px;
   color: #E34234;
 }
 
@@ -79,10 +78,10 @@ a {
   display: none;
   position: absolute;
   left: 30vw;
-  top: 55vh;
+  top: 75vh;
   margin: auto;
   color: #29698B;
-  font-size: 21px;
+  font-size: 55px;
   line-height: 1.2em;
   width: 70vw;
   text-align: justify;
@@ -91,14 +90,13 @@ a {
 
 .to-anchor {
   position: absolute;
-  margin: auto;
-  top: 89vh;
+  top: 99vh;
   right: 18vw;
-  width: 160px;
+  width: 47%;
   text-align: center;
   line-height: 1em;
   padding: 5px;
-  font-size: 20px;
+  font-size: 55px;
   background-color: #29698B;
   color: #F2F1E8;
   box-shadow: 5px 5px #00034B;
@@ -106,13 +104,12 @@ a {
 
 .to-anchor2 {
   position: absolute;
-  margin: auto;
-  bottom: 4vh;
-  left: 66vw;
+  top: 96.5vh;
+  left: 67vw;
   width: 44%;
   text-align: center;
   padding: 5px;
-  font-size: 40px;
+  font-size: 95px;
   color: #E34234;
 }
 
@@ -149,52 +146,14 @@ a {
 
 .our-distance {
   position: absolute;
-  margin: auto;
+  /* margin: auto; */
   line-height: 1.2em;
   top: 40vh;
-  left: 26vw;
+  left: 30vw;
   width: 50%;
   text-align: center;
   padding: 5px;
-  font-size: 20px;
+  font-size: 55px;
   color: #00034B;
+
 }
-/*
-@media screen and (min-width: 375px) {
-  .to-anchor {
-    position: absolute;
-    margin: auto;
-    top: 99vh;
-    right: 14vw;
-    width: 496px;
-    text-align: center;
-    line-height: 1em;
-    padding: 5px;
-    font-size: 60px;
-    background-color: #29698B;
-    color: #F2F1E8;
-    box-shadow: 5px 5px #00034B;
-  }
-
-  .to-anchor2 {
-      bottom: 3vh;
-    left: 71vw;
-    width: 44%;
-    font-size: 110px;
-  }
-
-  .output {
-    font-size: 54px;
-  }
-
-  .origin-button {
-    left: 34vw;
-    width: 30%;
-    padding: 5px;
-    font-size: 60px;
-  }
-
-  .origin-pint {
-    font-size: 60px;
-  }
-} */
