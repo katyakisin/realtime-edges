@@ -1,9 +1,9 @@
 let socket = io.connect();
 
-//let storedOriginPoint;
+let storedOriginPoint;
  let ourDistance = Math.random() * 100;
 
-let ourDistance = 40;
+//let ourDistance = 40;
 
 socket.on('origin-point',function(incomingPosition){
 
