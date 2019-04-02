@@ -12,7 +12,6 @@ body {
   font-family: monotalic-wide, sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 20px;
 }
 
 a {
@@ -161,8 +160,22 @@ animation-duration: 1s;
   animation-name: slideInDown;
 }
 
-.our-distance {
-  /* position: absolute;
+
+.generated-distance{
+  font-size: 95px;
+}
+
+.current-distance-away{
+    font-size: 95px;
+}
+
+.our-distance{
+    font-size: 95px;
+}
+
+
+/* .our-distance {
+ position: absolute;
   margin: auto;
   line-height: 1.2em;
   top: 30vh;
@@ -171,7 +184,7 @@ animation-duration: 1s;
   text-align: center;
   padding: 5px;
   font-size: 55px;
-  color: #00034B; */
+  color: #00034B;
 }
 
 .generated-distance{
@@ -185,4 +198,4 @@ animation-duration: 1s;
   padding: 5px;
   font-size: 55px;
   color: #00034B;
-}
+} */
