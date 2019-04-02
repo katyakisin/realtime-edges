@@ -89,6 +89,21 @@ animation-duration: 1s;
   padding: 10px;
 }
 
+.to-net {
+  text-decoration:none;
+  position: absolute;
+  top: 92vh;
+  right: 45vw;
+  width: 37%;
+  text-align: center;
+  line-height: 1em;
+  padding: 5px;
+  font-size: 55px;
+  background-color: #29698B;
+  color: #F2F1E8;
+  box-shadow: 5px 5px #00034B;
+}
+
 .to-anchor {
   position: absolute;
   top: 78vh;
