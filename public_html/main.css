@@ -176,6 +176,7 @@ animation-duration: 1s;
 .origin-point-readout{
   font-size: 95px;
   width: 90%;
+  width: 85%;
 }
 
 /* .our-distance {
