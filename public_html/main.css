@@ -21,7 +21,7 @@ a {
 .origin-button {
   position: absolute;
   margin: auto;
-  top: 35vh;
+  top: 25vh;
   left: 36vw;
   width: 30%;
   text-align: center;
@@ -37,7 +37,7 @@ a {
   display: none;
 position: absolute;
 margin: auto;
-top: 65vh;
+top: 55vh;
     left: 39vw;
 width: 24%;
 text-align: center;
@@ -79,7 +79,7 @@ animation-duration: 1s;
   display: none;
   position: absolute;
   left: 30vw;
-  top: 75vh;
+  top: 65vh;
   margin: auto;
   color: #29698B;
   font-size: 55px;
