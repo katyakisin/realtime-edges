@@ -162,7 +162,7 @@ animation-duration: 1s;
 
 
 .generated-distance{
-  font-size: 95px;
+
 }
 
 .current-distance-away{
@@ -173,6 +173,10 @@ animation-duration: 1s;
     font-size: 95px;
 }
 
+.origin-point-readout{
+  font-size: 95px;
+  width: 90%;
+}
 
 /* .our-distance {
  position: absolute;
