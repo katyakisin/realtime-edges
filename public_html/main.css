@@ -92,7 +92,7 @@ animation-duration: 1s;
 .to-net {
   text-decoration:none;
   position: absolute;
-  top: 79vh;
+  top: 78vh;
   right: 45vw;
   width: 37%;
   text-align: center;
@@ -106,7 +106,7 @@ animation-duration: 1s;
 
 .to-anchor {
   position: absolute;
-  top: 79vh;
+  top: 78vh;
   right: 18vw;
   width: 47%;
   text-align: center;
