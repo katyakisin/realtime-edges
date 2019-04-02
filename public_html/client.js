@@ -1,7 +1,7 @@
 let socket = io.connect();
 
-let storedOriginPoint;
-// let ourDistance = Math.random() * 100;
+//let storedOriginPoint;
+ let ourDistance = Math.random() * 100;
 
 let ourDistance = 40;
 
@@ -18,31 +18,31 @@ if ("geolocation" in navigator) {
   /* geolocation is available */
 
   // get our position every interval
-    setInterval(function(){
+  setInterval(function(){
 
-      $('.our-distance').text(ourDistance )
+    $('.our-distance').text(ourDistance)
 
 
-      socket.emit('get-origin-point');
+    socket.emit('get-origin-point');
 
-      navigator.geolocation.getCurrentPosition(function(position) {
+    navigator.geolocation.getCurrentPosition(function(position) {
 
-        // console.log(position)
-        console.log(position.coords.latitude)
-        console.log(position.coords.longitude)
+      // console.log(position)
+      console.log(position.coords.latitude)
+      console.log(position.coords.longitude)
 
-        //distance from the gd origin point
-        let gd = miles2feet( calcGeoDistance(position.coords.latitude, position.coords.longitude, storedOriginPoint.lat, storedOriginPoint.long ) )
+      //distance drom the ourigin point
+      let gd = miles2feet( calcGeoDistance(position.coords.latitude, position.coords.longitude, storedOriginPoint.lat, storedOriginPoint.lon ) )
 
-        if(gd <= ourDistance){
-          $('.current-distance-away').text( Math.round( gd ) )
+      if(gd <= ourDistance){
+        $('.current-distance-away').text( Math.round( gd ) )
 
-        }else{
-          $('.current-distance-away').text("you've reached the end, return to the origin point!")
-        }
+      }else{
+        $('.current-distance-away').text("you've reached the end, return to the origin point!")
+      }
 
-      });
-    }, 1000)
+    });
+  }, 1000)
 
 
 

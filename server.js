@@ -16,7 +16,7 @@ let storedOriginPoint;
 app.use(express.static(__dirname + '/public_html'))
 
 
-//socket == clinet
+//socket == client
 // io == server
 io.on('connection', function(socket){
 
