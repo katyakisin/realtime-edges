@@ -23,8 +23,6 @@ if ("geolocation" in navigator) {
     setInterval(function(){
 
       $('.our-distance').text(ourDistance)
-
-
       socket.emit('get-origin-point');
 
       navigator.geolocation.getCurrentPosition(function(position) {
@@ -40,8 +38,20 @@ if ("geolocation" in navigator) {
           $('.current-distance-away').text( Math.round( gd ) )
 
         }else{
-          $('.current-distance-away').text("you've reached the end, return to the origin point!")
+          $('.current-distance-away').text("you're at the origin point, find your node!")
         }
+
+//distance from generated node point
+let nodeDistance = distance2node( ourDistance , gd )
+
+if(gd <= ourDistance){
+  $('.node-distance').text( Math.round( nodeDistance ) )
+}
+
+
+
+
+
 
       });
     }, 1000)
@@ -60,6 +70,12 @@ function miles2feet(miles){
   return miles * 5280;
 }
 
+
+//distance from node
+
+function distance2node(geoDis, genDis){
+  return geoDis-genDis;
+}
 
 // http://www.movable-type.co.uk/scripts/latlong.html
 // Used Under MIT License
