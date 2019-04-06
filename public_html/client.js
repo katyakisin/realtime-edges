@@ -5,15 +5,13 @@ let storedOriginPoint;
 
 let ourDistance = Math.floor((Math.random()) * (300 - 75 + 1)) + 75;
 
-$('.output').html('[' + Math.round(1000000*position.coords.latitude)/1000000 + ', ' + Math.round(1000000*position.coords.longitude)/1000000 + ']')
-});
-
 socket.on('origin-point',function(incomingPosition){
 
   storedOriginPoint = incomingPosition;
 
   $('.origin-point-readout').text('[' + Math.round(1000000*storedOriginPoint.lat)/1000000 + ', ' + Math.round(1000000*storedOriginPoint.lon)/1000000 + ']')
   });
+
 
 
 if ("geolocation" in navigator) {
