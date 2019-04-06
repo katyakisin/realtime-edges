@@ -173,6 +173,10 @@ animation-duration: 1s;
   font-size: 75px;
 }
 
+
+.node-distance{
+  font-size: 75px;
+}
 .origin-point-readout{
     position: absolute;
     left: 30vw;
