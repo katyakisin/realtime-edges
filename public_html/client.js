@@ -32,13 +32,13 @@ if ("geolocation" in navigator) {
       console.log(position.coords.latitude)
       console.log(position.coords.longitude)
 
-      //distance drom the ourigin point
+      //distance from the our origin point
       let gd = miles2feet( calcGeoDistance(position.coords.latitude, position.coords.longitude, storedOriginPoint.lat, storedOriginPoint.lon ) )
 
-      if(gd <= ourDistance){
+      if((ourDistance - gd) > 0){
         $('.current-distance-away').text( Math.round( gd ) )
 
-      }else{
+      }else if {
         $('.current-distance-away').text("you've reached the end, return to the origin point!")
       }
 
