@@ -8,8 +8,7 @@ const server = require('http').Server( app )
 // make socket io available
 const io = require('socket.io')(server);
 
-let totalConnections = 0
-let storedPoints = []
+
 
 let storedOriginPoint;
 
@@ -17,21 +16,9 @@ let storedOriginPoint;
 app.use(express.static(__dirname + '/public_html'))
 
 
-//socket == client
+//socket == clinet
 // io == server
 io.on('connection', function(socket){
-
-  //listen for clients reaching the end of thier journey
-  // socket.on('reachedTheEnd',function(ll){
-  //   storedPoints.push(ll)
-  //
-  //   if(storedPoints.length ==  io.sockets.sockets.length ){
-  //     //we've all checked in.
-  //     io.emit('renderPolygon', storedPoints)
-  //     //this will send all of the stored points down to the clinet and they can render the polygon in the clinet.js prob using p5.js
-  //   }
-  //
-  // })
 
   //log out the unique identifier for this connection
   console.log(socket.id);
