@@ -38,8 +38,8 @@ if ("geolocation" in navigator) {
       if((ourDistance - gd) > 0){
         $('.current-distance-away').text( Math.round( gd ) )
 
-      }else if {
-        $('.current-distance-away').text("you've reached the end, return to the origin point!")
+      }else if ((ourDistance - gd) == 0){
+        $('.current-distance-away').text("you've reached your network node, stand by for others to occupy their positions")
       }
 
     });
