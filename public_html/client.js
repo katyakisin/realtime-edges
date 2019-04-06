@@ -22,7 +22,7 @@ if ("geolocation" in navigator) {
   // get our position every interval
     setInterval(function(){
 
-      $('.our-distance').text(ourDistance)
+      $('.our-distance').text('assigned distance: ' + ourDistance)
       socket.emit('get-origin-point');
 
       navigator.geolocation.getCurrentPosition(function(position) {
@@ -35,7 +35,7 @@ if ("geolocation" in navigator) {
         let gd = miles2feet( calcGeoDistance(position.coords.latitude, position.coords.longitude, storedOriginPoint.lat, storedOriginPoint.lon ) )
 
         if(gd <= ourDistance){
-          $('.current-distance-away').text( Math.round( gd ) )
+          $('.current-distance-away').text( 'anchor distance: ' + Math.round( gd ) )
 
         }else{
           $('.current-distance-away').text("you're at the origin point, find your node!")
@@ -45,7 +45,7 @@ if ("geolocation" in navigator) {
 let nodeDistance = distance2node( ourDistance , gd )
 
 if(gd <= ourDistance){
-  $('.node-distance').text( Math.round( nodeDistance ) )
+  $('.node-distance').text('node distance: ' +  Math.round( nodeDistance ) )
 }
 
 else{
