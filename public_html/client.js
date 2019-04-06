@@ -26,11 +26,12 @@ if ("geolocation" in navigator) {
       console.log(position.coords.longitude)
       //distance from the our origin point
 
-      let gd = miles2feet( calcGeoDistance(position.coords.latitude, position.coords.longitude, storedOriginPoint.lat, storedOriginPoint.lon ) );
+
 
       let nodeDistance = calcNodeDistance( nodeValue, gd);
+      let gd = miles2feet( calcGeoDistance(position.coords.latitude, position.coords.longitude, storedOriginPoint.lat, storedOriginPoint.lon ) );
 
-      if(gd >= 0){
+      if(gd <= 0){
         $('.our-distance').text( Math.round( gd ) )
 
       }else{
