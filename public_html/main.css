@@ -8,7 +8,9 @@ margin: 0;
 
 body {
   width: 100vw;
-  height: 100vh;
+  height: 100vh;    <div class="node-distance">
+    generated node distance
+      </div>
   font-family: monotalic-wide, sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -165,12 +167,12 @@ animation-duration: 1s;
 
 }
 
-.current-distance-away{
+.current-distance-away-anchor{
     font-size: 95px;
 }
 
-.our-distance{
-
+.node-distance{
+  font-size: 95px;
 }
 
 .origin-point-readout{
