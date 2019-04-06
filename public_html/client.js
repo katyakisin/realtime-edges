@@ -33,12 +33,11 @@ if ("geolocation" in navigator) {
       //distance from the our origin point
       let gd = miles2feet( calcGeoDistance(position.coords.latitude, position.coords.longitude, storedOriginPoint.lat, storedOriginPoint.lon ) );
 
-      let
 
-      if((ourDistance - gd) > 0){
+      if(gd <= 0){
         $('.current-distance-away').text( Math.round( gd ) )
 
-      }else if ((ourDistance - gd) == 0){
+      }else{
         $('.current-distance-away').text("you've reached your network node, stand by for others to occupy their positions")
       }
 
