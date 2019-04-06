@@ -48,6 +48,11 @@ if(gd <= ourDistance){
   $('.node-distance').text( Math.round( nodeDistance ) )
 }
 
+else(gd <= ourDistance){
+  $('.node-distance').text("you're at the origin point, find your node!")
+}
+
+
 
 
 
