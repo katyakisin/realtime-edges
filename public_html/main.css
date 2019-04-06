@@ -163,20 +163,20 @@ animation-duration: 1s;
 
 .current-distance-away{
   font-size: 75px;
-      position: absolute;
+      position: relative;
         margin: auto;
 }
 
 .our-distance{
   font-size: 75px;
-      position: absolute;
+      position: relative;
         margin: auto;
 }
 
 
 .node-distance{
   font-size: 75px;
-      position: absolute;
+      position: relative;
         margin: auto;
 }
 
