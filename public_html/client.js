@@ -20,6 +20,7 @@ if ("geolocation" in navigator) {
   setInterval(function(){
     $('.our-distance').text(nodeVale);
     socket.emit('get-origin-point');
+
     navigator.geolocation.getCurrentPosition(function(position) {
       // console.log(position)
       console.log(position.coords.latitude)
@@ -54,11 +55,6 @@ function miles2feet(miles){
 }
 
 
-// //distance to assigned number
-// function distance2node(feet){
-//   return nodeDistance - gd;
-// }
-
 
 
 // http://www.movable-type.co.uk/scripts/latlong.html
@@ -78,9 +74,9 @@ function calcGeoDistance(lat1, lon1, lat2, lon2){
 }
 
 
-function calcNodeDistance(genD, geoD){
-  return genD-geoD;
-}
+// function calcNodeDistance(genD, geoD){
+//   return genD-geoD;
+// }
 
 
 let port = process.env.PORT || 3000;
