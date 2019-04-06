@@ -168,15 +168,19 @@ animation-duration: 1s;
 }
 
 .current-distance-away-anchor{
-    font-size: 95px;
+    font-size: 75px;
+}
+
+.current-distance-away-node{
+    font-size: 75px;
 }
 
 .node-distance{
-  font-size: 95px;
+  font-size: 75px;
 }
 
 .origin-point-readout{
-  font-size: 95px;
+  font-size: 75px;
   width: 90%;
   width: 85%;
 }
