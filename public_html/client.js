@@ -9,7 +9,7 @@ socket.on('origin-point',function(incomingPosition){
 
   storedOriginPoint = incomingPosition;
 
-  $('.origin-point-readout').text('anchor: [' + Math.round(1000000*storedOriginPoint.lat)/1000000 + ', ' + Math.round(1000000*storedOriginPoint.lon)/1000000 + ']')
+  $('.origin-point-readout').text('anchor : [' + Math.round(1000000*storedOriginPoint.lat)/1000000 + ', ' + Math.round(1000000*storedOriginPoint.lon)/1000000 + ']')
   });
 
 
@@ -48,8 +48,8 @@ if(gd <= ourDistance){
   $('.node-distance').text( Math.round( nodeDistance ) )
 }
 
-else(gd <= ourDistance){
-  $('.node-distance').text("you're at the origin point, find your node!")
+else{
+  $('.node-distance').$('.current-distance-away').text("you're at the origin point, find your node!")
 }
 
 
