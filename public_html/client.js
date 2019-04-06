@@ -22,7 +22,7 @@ if ("geolocation" in navigator) {
   // get our position every interval
     setInterval(function(){
 
-      $('.node-distance').text(nodeValue)
+      $('.our-distance').text(nodeValue)
 
 
       socket.emit('get-origin-point');

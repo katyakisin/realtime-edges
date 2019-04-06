@@ -8,9 +8,7 @@ margin: 0;
 
 body {
   width: 100vw;
-  height: 100vh;    <div class="node-distance">
-    generated node distance
-      </div>
+  height: 100vh;
   font-family: monotalic-wide, sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -171,10 +169,6 @@ animation-duration: 1s;
     font-size: 75px;
 }
 
-.current-distance-away-node{
-    font-size: 75px;
-}
-
 .node-distance{
   font-size: 75px;
 }
@@ -182,31 +176,4 @@ animation-duration: 1s;
 .origin-point-readout{
   font-size: 75px;
   width: 90%;
-  width: 85%;
 }
-
-/* .our-distance {
- position: absolute;
-  margin: auto;
-  line-height: 1.2em;
-  top: 30vh;
-  left: 27vw;
-  width: 50%;
-  text-align: center;
-  padding: 5px;
-  font-size: 55px;
-  color: #00034B;
-}
-
-.generated-distance{
-  position: absolute;
-  margin: auto;
-  line-height: 1.2em;
-  top: 30vh;
-  left: 27vw;
-  width: 50%;
-  text-align: center;
-  padding: 5px;
-  font-size: 55px;
-  color: #00034B;
-} */
