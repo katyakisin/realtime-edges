@@ -162,22 +162,25 @@ animation-duration: 1s;
 
 
 .current-distance-away{
-  font-size: 75px;
+  font-size: 55px;
       position: relative;
         margin: auto;
+            text-align: justify;
 }
 
 .our-distance{
-  font-size: 75px;
+  font-size: 55px;
       position: relative;
         margin: auto;
+            text-align: justify;
 }
 
 
 .node-distance{
-  font-size: 75px;
+  font-size: 55px;
       position: relative;
         margin: auto;
+            text-align: justify;
 }
 
 .origin-point-readout{
