@@ -1,7 +1,7 @@
 let socket = io.connect();
 
 let storedOriginPoint;
-let nodeDistance = Math.floor((Math.random()) * (300 - 75 + 1)) + 75;
+let nodeValue = Math.floor((Math.random()) * (300 - 75 + 1)) + 75;
 
 
 
@@ -18,7 +18,7 @@ if ("geolocation" in navigator) {
   /* geolocation is available */
   // get our position every interval
   setInterval(function(){
-    $('.our-distance').text(nodeDistance)
+    $('.generated-distance').text(nodeValue);
     socket.emit('get-origin-point');
     navigator.geolocation.getCurrentPosition(function(position) {
       // console.log(position)
@@ -27,14 +27,16 @@ if ("geolocation" in navigator) {
       //distance from the our origin point
       let gd = miles2feet( calcGeoDistance(position.coords.latitude, position.coords.longitude, storedOriginPoint.lat, storedOriginPoint.lon ) );
 
+      let nodeDistance = calcNodeDistance( nodeValue, gd);
+
+
       if(gd <= 0){
-        $('.current-distance-away').text( Math.round( gd ) )
+        $('.our-distance').text( Math.round( gd ) )
 
       }else{
-        $('.current-distance-away').text("you've reached your network node, stand by for others to occupy their positions")
+        $('.our-distance').text("you've reached your network node, stand by for others to occupy their positions")
       }
 
-      calcNodeDistance();
 
 
 
@@ -82,10 +84,8 @@ function calcGeoDistance(lat1, lon1, lat2, lon2){
 }
 
 
-
 function calcNodeDistance(genD, geoD){
-
-
+  return genD-geoD;
 }
 
 
