@@ -1,10 +1,11 @@
 let socket = io.connect();
 
 let storedOriginPoint;
-let ourDistance = Math.floor((Math.random() * 300) + 1);
+let nodeDistance = Math.floor((Math.random()) * (300 - 75 + 1)) + 75;
 
 
-// let ourDistance = 30;
+
+// let nodeDistance = 30;
 
 socket.on('origin-point',function(incomingPosition){
   storedOriginPoint = incomingPosition;
@@ -15,24 +16,16 @@ socket.on('origin-point',function(incomingPosition){
 
 if ("geolocation" in navigator) {
   /* geolocation is available */
-
   // get our position every interval
   setInterval(function(){
-
-    $('.our-distance').text(ourDistance)
-
-
+    $('.our-distance').text(nodeDistance)
     socket.emit('get-origin-point');
-
     navigator.geolocation.getCurrentPosition(function(position) {
-
       // console.log(position)
       console.log(position.coords.latitude)
       console.log(position.coords.longitude)
-
       //distance from the our origin point
       let gd = miles2feet( calcGeoDistance(position.coords.latitude, position.coords.longitude, storedOriginPoint.lat, storedOriginPoint.lon ) );
-
 
       if(gd <= 0){
         $('.current-distance-away').text( Math.round( gd ) )
@@ -40,6 +33,12 @@ if ("geolocation" in navigator) {
       }else{
         $('.current-distance-away').text("you've reached your network node, stand by for others to occupy their positions")
       }
+
+      calcNodeDistance();
+
+
+
+
 
     });
   }, 1000)
@@ -59,6 +58,13 @@ function miles2feet(miles){
 }
 
 
+// //distance to assigned number
+// function distance2node(feet){
+//   return nodeDistance - gd;
+// }
+
+
+
 // http://www.movable-type.co.uk/scripts/latlong.html
 // Used Under MIT License
 function calcGeoDistance(lat1, lon1, lat2, lon2){
@@ -75,6 +81,12 @@ function calcGeoDistance(lat1, lon1, lat2, lon2){
     return d;
 }
 
+
+
+function calcNodeDistance(genD, geoD){
+
+
+}
 
 
 let port = process.env.PORT || 3000;
