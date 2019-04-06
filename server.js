@@ -36,6 +36,9 @@ io.on('connection', function(socket){
 
   //when someone asks for the origin point , lets send it out to everyone.
   socket.on('get-origin-point', function(){
+
+
+
     io.emit('origin-point', storedOriginPoint)
   })
 

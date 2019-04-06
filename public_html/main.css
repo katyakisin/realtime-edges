@@ -174,7 +174,14 @@ animation-duration: 1s;
 }
 
 .origin-point-readout{
-  position: absolute;
-  font-size: 75px;
-  width: 50vw;
+    position: absolute;
+    left: 30vw;
+    top: 40vh;
+    margin: auto;
+    color: #29698B;
+    font-size: 55px;
+    line-height: 1.2em;
+    width: 70vw;
+    text-align: justify;
+    padding: 10px;
 }
