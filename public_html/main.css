@@ -176,7 +176,7 @@ animation-duration: 1s;
 .origin-point-readout{
     position: absolute;
     left: 30vw;
-    top: 40vh;
+    top: 60vh;
     margin: auto;
     color: #29698B;
     font-size: 55px;
