@@ -18,7 +18,7 @@ if ("geolocation" in navigator) {
   /* geolocation is available */
   // get our position every interval
   setInterval(function(){
-    $('.our-distance').text(nodeVale)
+    $('.our-distance').text(nodeVale);
     socket.emit('get-origin-point');
     navigator.geolocation.getCurrentPosition(function(position) {
       // console.log(position)
