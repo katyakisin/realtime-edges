@@ -1,12 +1,14 @@
 let socket = io.connect();
 
 let storedOriginPoint;
+// let ourDistance = Math.random() * 100;
+// let ourDistance = 40
 let nodeValue = Math.floor((Math.random()) * (300 - 75 + 1)) + 75;
 
-
-
 socket.on('origin-point',function(incomingPosition){
+
   storedOriginPoint = incomingPosition;
+
   $('.origin-point-readout').text(storedOriginPoint.lat + ',' + storedOriginPoint.lon)
 
 })
@@ -14,28 +16,35 @@ socket.on('origin-point',function(incomingPosition){
 
 if ("geolocation" in navigator) {
   /* geolocation is available */
+
+
+
   // get our position every interval
+    setInterval(function(){
 
-  setInterval(function(){
-    $('.our-distance').text(nodeVale);
-    socket.emit('get-origin-point');
+      $('.our-distance').text(nodeValue)
 
-    navigator.geolocation.getCurrentPosition(function(position) {
-      // console.log(position)
-      console.log(position.coords.latitude)
-      console.log(position.coords.longitude)
-      //distance from the our origin point
-      let gd = miles2feet( calcGeoDistance(position.coords.latitude, position.coords.longitude, storedOriginPoint.lat, storedOriginPoint.lon ) );
 
-      if(gd >= 0){
-        $('.current-distance-away').text( Math.round( gd ) )
+      socket.emit('get-origin-point');
 
-      }else{
-        $('.current-distance-away').text("you've reached your network node, stand by for others to occupy their positions")
-      }
+      navigator.geolocation.getCurrentPosition(function(position) {
 
-    });
-  }, 1000)
+        // console.log(position)
+        console.log(position.coords.latitude)
+        console.log(position.coords.longitude)
+
+        //distance drom the ourigin point
+        let gd = miles2feet( calcGeoDistance(position.coords.latitude, position.coords.longitude, storedOriginPoint.lat, storedOriginPoint.lon ) )
+
+        if(gd <= nodeValue){
+          $('.current-distance-away').text( Math.round( gd ) )
+
+        }else{
+          $('.current-distance-away').text("you've reached the end, return to the origin point!")
+        }
+
+      });
+    }, 1000)
 
 
 
@@ -44,14 +53,10 @@ if ("geolocation" in navigator) {
   console.error('no geolocation available!')
 }
 
-
-
 //convert miles to feet
 function miles2feet(miles){
   return miles * 5280;
 }
-
-
 
 
 // http://www.movable-type.co.uk/scripts/latlong.html
@@ -69,11 +74,5 @@ function calcGeoDistance(lat1, lon1, lat2, lon2){
     var d = R * c;
     return d;
 }
-
-
-// function calcNodeDistance(genD, geoD){
-//   return genD-geoD;
-// }
-
 
 let port = process.env.PORT || 3000;
