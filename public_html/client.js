@@ -18,28 +18,21 @@ if ("geolocation" in navigator) {
   /* geolocation is available */
   // get our position every interval
   setInterval(function(){
-    $('.generated-distance').text(nodeValue);
+    $('.our-distance').text(nodeVale)
     socket.emit('get-origin-point');
     navigator.geolocation.getCurrentPosition(function(position) {
       // console.log(position)
       console.log(position.coords.latitude)
       console.log(position.coords.longitude)
       //distance from the our origin point
-
-
-
-      let nodeDistance = calcNodeDistance( nodeValue, gd);
       let gd = miles2feet( calcGeoDistance(position.coords.latitude, position.coords.longitude, storedOriginPoint.lat, storedOriginPoint.lon ) );
 
       if(gd <= 0){
-        $('.our-distance').text( Math.round( gd ) )
+        $('.current-distance-away').text( Math.round( gd ) )
 
       }else{
-        $('.our-distance').text("you've reached your network node, stand by for others to occupy their positions")
+        $('.current-distance-away').text("you've reached your network node, stand by for others to occupy their positions")
       }
-
-
-
 
 
 
