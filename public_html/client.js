@@ -1,15 +1,13 @@
 let socket = io.connect();
 
 let storedOriginPoint;
-let ourDistance = Math.floor((Math.random() * 300) + 150);
+let ourDistance = Math.floor((Math.random() * 150) + 300);
 
 
 // let ourDistance = 30;
 
 socket.on('origin-point',function(incomingPosition){
-
   storedOriginPoint = incomingPosition;
-
   $('.origin-point-readout').text(storedOriginPoint.lat + ',' + storedOriginPoint.lon)
 
 })
@@ -33,7 +31,9 @@ if ("geolocation" in navigator) {
       console.log(position.coords.longitude)
 
       //distance from the our origin point
-      let gd = miles2feet( calcGeoDistance(position.coords.latitude, position.coords.longitude, storedOriginPoint.lat, storedOriginPoint.lon ) )
+      let gd = miles2feet( calcGeoDistance(position.coords.latitude, position.coords.longitude, storedOriginPoint.lat, storedOriginPoint.lon ) );
+
+      let
 
       if((ourDistance - gd) > 0){
         $('.current-distance-away').text( Math.round( gd ) )
