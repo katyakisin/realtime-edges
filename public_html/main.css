@@ -161,25 +161,27 @@ animation-duration: 1s;
 }
 
 
-.generated-distance{
-
-}
-
 .current-distance-away{
-    font-size: 75px;
+  font-size: 75px;
+      position: absolute;
+        margin: auto;
 }
 
 .our-distance{
   font-size: 75px;
+      position: absolute;
+        margin: auto;
 }
 
 
 .node-distance{
   font-size: 75px;
+      position: absolute;
+        margin: auto;
 }
+
 .origin-point-readout{
     position: absolute;
-    left: 30vw;
     top: 55vh;
     margin: auto;
     color: #29698B;
