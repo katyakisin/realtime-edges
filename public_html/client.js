@@ -1,7 +1,7 @@
 let socket = io.connect();
 
 let storedOriginPoint;
-let ourDistance = Math.floor((Math.random() * 150) + 300);
+let ourDistance = Math.floor((Math.random() * 300) + 1);
 
 
 // let ourDistance = 30;
