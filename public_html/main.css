@@ -175,13 +175,12 @@ animation-duration: 1s;
 
 .origin-point-readout{
     position: absolute;
-    left: 30vw;
-    top: 60vh;
+    left: 20vw;
+    top: 50vh;
     margin: auto;
     color: #29698B;
-    font-size: 55px;
+    font-size: 50px;
     line-height: 1.2em;
     width: 55vw;
     text-align: justify;
-    padding: 10px;
 }
