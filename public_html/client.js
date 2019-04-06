@@ -9,7 +9,7 @@ socket.on('origin-point',function(incomingPosition){
 
   storedOriginPoint = incomingPosition;
 
-  $('.origin-point-readout').text('[' + Math.round(1000000*storedOriginPoint.lat)/1000000 + ', ' + Math.round(1000000*storedOriginPoint.lon)/1000000 + ']')
+  $('.origin-point-readout').text('origin point: '+ <br> +'[' + Math.round(1000000*storedOriginPoint.lat)/1000000 + ', ' + Math.round(1000000*storedOriginPoint.lon)/1000000 + ']')
   });
 
 
