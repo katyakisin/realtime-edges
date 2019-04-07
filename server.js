@@ -20,23 +20,31 @@ app.use(express.static(__dirname + '/public_html'))
 // io == server
 io.on('connection', function(socket){
 
+  console.log(io.sockets.clients);
+
   //log out the unique identifier for this connection
   console.log(socket.id);
 
   socket.on('generate-origin-point', function(ll){
     //store this on the server for later!
+
     storedOriginPoint = ll;
     console.log(ll)
     console.log(ll.lat)
     console.log(ll.lon)
     console.log(storedOriginPoint)
 
+
+
+
+
   })
 
 
-  //when someone asks for the origin point , lets send it out to everyone.
-  socket.on('get-origin-point', function(){
 
+
+  //when someone asks for the origin point, lets send it out to everyone.
+  socket.on('get-origin-point', function(){
 
 
     io.emit('origin-point', storedOriginPoint)
