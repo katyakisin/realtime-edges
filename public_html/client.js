@@ -43,12 +43,12 @@ if ("geolocation" in navigator) {
 
 //distance from generated node point
 let nodeDistance = distance2node( ourDistance , gd )
-if (nodeDistance <= 0){
+// if (nodeDistance <= 0){
 console.log('nodeDistance equals 0')
 socket.emit('reached-node', {'abc': 'xyz'});
 
 
-}
+
 
 
 if(gd <= ourDistance){
