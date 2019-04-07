@@ -43,7 +43,7 @@ socket.on('reached-node'), function(ll){
 
 console.log('reached node!');
 
-});
+};
 
 
 
