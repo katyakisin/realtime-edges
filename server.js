@@ -34,14 +34,16 @@ io.on('connection', function(socket){
     console.log(ll.lon)
     console.log(storedOriginPoint)
 
+    console.
+
   });
 
 
 
-socket.on('reached-node', function(){
+socket.on('reached-node', function(a){
   //store this on the server for later!
 
-console.log('reached node!');
+console.log('reached node!' + a);
 
 });
 
