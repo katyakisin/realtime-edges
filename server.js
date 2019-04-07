@@ -20,7 +20,7 @@ app.use(express.static(__dirname + '/public_html'))
 // io == server
 io.on('connection', function(socket){
 
-  console.log(io.sockets.clients);
+  console.log('clients connected!!!' + io.sockets.clients());
 
   //log out the unique identifier for this connection
   console.log(socket.id);
