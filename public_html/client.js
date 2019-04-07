@@ -45,8 +45,7 @@ if ("geolocation" in navigator) {
 let nodeDistance = distance2node( ourDistance , gd )
 if (nodeDistance <= 0){
 console.log('nodeDistance equals 0')
-
-socket.emit ('reached node', { });
+socket.emit('reached-node', { });
 
 
 }
