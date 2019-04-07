@@ -1,189 +1,186 @@
 html {
   background-color: #F2F1E8;
   box-sizing: border-box;
-margin: 0;
+  margin: 0;
 }
 
 @media screen and (min-width: 440px) {
+  body {
+    width: 100vw;
+    height: 100vh;
+    font-family: monotalic-wide, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
 
-body {
-  width: 100vw;
-  height: 100vh;
-  font-family: monotalic-wide, sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
+  a {
+    text-decoration: none;
+  }
 
-a {
-  text-decoration: none;
-}
+  .origin-button {
+    position: absolute;
+    margin: auto;
+    top: 25vh;
+    left: 36vw;
+    width: 30%;
+    text-align: center;
+    line-height: 1em;
+    background-color: #29698B;
+    padding: 5px;
+    font-size: 55px;
+    box-shadow: 5px 5px #00034B;
+    color: #F2F1E8;
+  }
 
-.origin-button {
-  position: absolute;
-  margin: auto;
-  top: 25vh;
-  left: 36vw;
-  width: 30%;
-  text-align: center;
-  line-height: 1em;
-  background-color: #29698B;
-  padding: 5px;
-  font-size: 55px;
-  box-shadow: 5px 5px #00034B;
-  color: #F2F1E8;
-}
-
-.origin-pin {
-  display: none;
-position: absolute;
-margin: auto;
-top: 55vh;
+  .origin-pin {
+    display: none;
+    position: absolute;
+    margin: auto;
+    top: 55vh;
     left: 39vw;
-width: 24%;
-text-align: center;
-padding: 5px;
-font-size: 55px;
-color: #00034B;
-animation-name: slideInDown;
-animation-duration: 1s;
-}
-
-.nav-back {
-  font-family: monotalic-wide, sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  position: absolute;
-  top: 76vh;
-  right: 87vw;
-  text-align: center;
-  padding: 5px;
-  font-size: 97px;
-  color: #E34234;
-}
-
-.pin-dropped {
-  position: absolute;
-  top: 5vh;
-  left: 13vw;
-  display: block;
-  margin: auto;
-  color: #29698B;
-  font-size: 17px;
-  line-height: 1em;
-  width: 70vw;
-  text-align: center;
-  padding: 10px;
-}
-
-.output {
-  display: none;
-  position: absolute;
-  left: 30vw;
-  top: 60vh;
-  margin: auto;
-  color: #29698B;
-  font-size: 55px;
-  line-height: 1.2em;
-  width: 70vw;
-  text-align: justify;
-  padding: 10px;
-}
-
-.to-net {
-  text-decoration:none;
-  position: absolute;
-  top: 78vh;
-  right: 45vw;
-  width: 37%;
-  text-align: center;
-  line-height: 1em;
-  padding: 5px;
-  font-size: 55px;
-  background-color: #29698B;
-  color: #F2F1E8;
-  box-shadow: 5px 5px #00034B;
-}
-
-.to-anchor {
-  position: absolute;
-  top: 78vh;
-  right: 18vw;
-  width: 47%;
-  text-align: center;
-  line-height: 1em;
-  padding: 5px;
-  font-size: 55px;
-  background-color: #29698B;
-  color: #F2F1E8;
-  box-shadow: 5px 5px #00034B;
-}
-
-.to-anchor2 {
-  left: 86vw;
-  position: absolute;
-  top: 76vh;
-  /* width: 44%; */
-  /* text-align: center; */
-  /* padding: 5px; */
-  font-size: 97px;
-  color: #E34234;
-}
-
-@-webkit-keyframes slideInDown {
-  from {
-    -webkit-transform: translate3d(0, -340%, 0);
-    transform: translate3d(0, -340%, 0);
-    visibility: visible;
+    width: 24%;
+    text-align: center;
+    padding: 5px;
+    font-size: 55px;
+    color: #00034B;
+    animation-name: slideInDown;
+    animation-duration: 1s;
   }
 
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+  .nav-back {
+    font-family: monotalic-wide, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    position: absolute;
+    top: 76vh;
+    right: 87vw;
+    text-align: center;
+    padding: 5px;
+    font-size: 97px;
+    color: #E34234;
   }
-}
 
-@keyframes slideInDown {
-  from {
-    -webkit-transform: translate3d(0, -340%, 0);
-    transform: translate3d(0, -340%, 0);
-    visibility: visible;
+  .pin-dropped {
+    position: absolute;
+    top: 5vh;
+    left: 13vw;
+    display: block;
+    margin: auto;
+    color: #29698B;
+    font-size: 17px;
+    line-height: 1em;
+    width: 70vw;
+    text-align: center;
+    padding: 10px;
   }
 
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+  .output {
+    display: none;
+    position: absolute;
+    left: 30vw;
+    top: 60vh;
+    margin: auto;
+    color: #29698B;
+    font-size: 55px;
+    line-height: 1.2em;
+    width: 70vw;
+    text-align: justify;
+    padding: 10px;
   }
-}
 
-.slideInDown {
-  -webkit-animation-name: slideInDown;
-  animation-name: slideInDown;
-}
+  .to-net {
+    text-decoration: none;
+    position: absolute;
+    top: 78vh;
+    right: 45vw;
+    width: 37%;
+    text-align: center;
+    line-height: 1em;
+    padding: 5px;
+    font-size: 55px;
+    background-color: #29698B;
+    color: #F2F1E8;
+    box-shadow: 5px 5px #00034B;
+  }
 
+  .to-anchor {
+    position: absolute;
+    top: 78vh;
+    right: 18vw;
+    width: 47%;
+    text-align: center;
+    line-height: 1em;
+    padding: 5px;
+    font-size: 55px;
+    background-color: #29698B;
+    color: #F2F1E8;
+    box-shadow: 5px 5px #00034B;
+  }
 
-.current-distance-away{
-  font-size: 55px;
-      position: relative;
-        margin: auto;
-            text-align: justify;
-}
+  .to-anchor2 {
+    left: 86vw;
+    position: absolute;
+    top: 76vh;
+    /* width: 44%; */
+    /* text-align: center; */
+    /* padding: 5px; */
+    font-size: 97px;
+    color: #E34234;
+  }
 
-.our-distance{
-  font-size: 55px;
-      position: relative;
-        margin: auto;
-            text-align: justify;
-}
+  @-webkit-keyframes slideInDown {
+    from {
+      -webkit-transform: translate3d(0, -340%, 0);
+      transform: translate3d(0, -340%, 0);
+      visibility: visible;
+    }
 
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
 
-.node-distance{
-  font-size: 55px;
-      position: relative;
-        margin: auto;
-            text-align: justify;
-}
+  @keyframes slideInDown {
+    from {
+      -webkit-transform: translate3d(0, -340%, 0);
+      transform: translate3d(0, -340%, 0);
+      visibility: visible;
+    }
 
-.origin-point-readout{
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .slideInDown {
+    -webkit-animation-name: slideInDown;
+    animation-name: slideInDown;
+  }
+
+  .current-distance-away {
+    font-size: 55px;
+    position: relative;
+    margin: auto;
+    text-align: justify;
+  }
+
+  .our-distance {
+    font-size: 55px;
+    position: relative;
+    margin: auto;
+    text-align: justify;
+  }
+
+  .node-distance {
+    font-size: 55px;
+    position: relative;
+    margin: auto;
+    text-align: justify;
+  }
+
+  .origin-point-readout {
     position: absolute;
     top: 55vh;
     margin: auto;
@@ -192,4 +189,4 @@ animation-duration: 1s;
     line-height: 1.2em;
     width: 50vw;
     text-align: justify;
-}
+  }
