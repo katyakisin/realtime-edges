@@ -34,7 +34,6 @@ io.on('connection', function(socket){
     console.log(ll.lon)
     console.log(storedOriginPoint)
 
-    console.
 
   });
 
