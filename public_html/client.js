@@ -43,20 +43,14 @@ if ("geolocation" in navigator) {
 
 //distance from generated node point
 let nodeDistance = distance2node( ourDistance , gd )
+if (nodeDistance == 0){
+console.log('nodeDistance equals 0')  
+}
+
 
 if(gd <= ourDistance){
   $('.node-distance').text('node distance: ' +  Math.round( nodeDistance ) )
 }
-
-else{
-  $('.node-distance').$('.current-distance-away').text("you're at the origin point, find your node!")
-}
-
-
-
-
-
-
 
       });
     }, 1000)
