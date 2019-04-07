@@ -38,12 +38,12 @@ io.on('connection', function(socket){
 
 
 
-socket.on('reached-node'), function(ll){
+socket.on('reached-node', function(){
   //store this on the server for later!
 
 console.log('reached node!');
 
-};
+});
 
 
 
