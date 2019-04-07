@@ -25,7 +25,7 @@ if ("geolocation" in navigator) {
       $('.our-distance').text('assigned distance: ' + ourDistance)
       socket.emit('get-origin-point');
 
-      navigator.geolocation.getCurrentPosition(function(position) {
+      navigator.geolocation.getCurrentPosition(function(position){
 
         // console.log(position)
         console.log(position.coords.latitude)
@@ -43,8 +43,12 @@ if ("geolocation" in navigator) {
 
 //distance from generated node point
 let nodeDistance = distance2node( ourDistance , gd )
-if (nodeDistance == 0){
-console.log('nodeDistance equals 0')  
+if (nodeDistance <= 0){
+console.log('nodeDistance equals 0')
+
+socket.emit ('reached node', { });
+
+
 }
 
 

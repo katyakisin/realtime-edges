@@ -8,7 +8,7 @@ const server = require('http').Server( app )
 // make socket io available
 const io = require('socket.io')(server);
 
-
+let clientCount = 0;
 
 let storedOriginPoint;
 
@@ -20,7 +20,7 @@ app.use(express.static(__dirname + '/public_html'))
 // io == server
 io.on('connection', function(socket){
 
-  console.log('clients connected!!!' + io.sockets.clients());
+ // clientCount++;
 
   //log out the unique identifier for this connection
   console.log(socket.id);
@@ -34,11 +34,20 @@ io.on('connection', function(socket){
     console.log(ll.lon)
     console.log(storedOriginPoint)
 
+  });
+
+
+
+socket.on('reached-node'), function(ll){
+  //store this on the server for later!
+
+console.log('reached node!');
+
+});
 
 
 
 
-  })
 
 
 
