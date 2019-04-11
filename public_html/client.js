@@ -1,7 +1,5 @@
 let socket = io.connect();
 
-let collectedCoords;
-
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(function(position){
     console.log('got location' + position)
@@ -60,12 +58,6 @@ socket.on('gather-locations',function(){
 
 
 
-socket.on('collected-coords',function(coordsArray){
-
-  // console.log(coordsArray)
-  collectedCoords = coordsArray
-
-})
 
 socket.on('game-over', function(){
   //the game is over
@@ -75,40 +67,39 @@ socket.on('game-over', function(){
 })
 
 
+// ***** START P5 STUFF *********
 
-//an array of objects containing lat / lon points
-  // {"lat" : 44.964782 , "lon" : -93.276922 }
+let scalar = 1;
 
-
-// let latlonArray = [
-//     // {"lat" : 44.964782, "lon" : -93.276922 },
-//     // {"lat" : 44.964125, "lon" : -93.266912 },
-//     // {"lat" : 44.918733, "lon" : -93.241098 },
-//     // {"lat" : 44.924925, "lon" : -93.331771 }
-//
-//
-//   {"lat" : 44.963385, "lon" : -93.278789 },
-//   {"lat" : 44.976013, "lon" : -93.258953 },
-//   // {"lat" : 44.945031, "lon" : -93.225235 },
-//    {"lat" : 44.942499, "lon" : -93.225518 },
-//   {"lat" :  44.893919, "lon" : -93.237053 }
-//
-// ]
-
+// let ringInc = 0.25
 
 function setup() {
   createCanvas(500, 500);
   background(0, 3, 75);
+
+  socket.on('collected-coords',function(coordsArray){
+
+    console.log(coordsArray)
+
+    //draw it
+    ll2poly(coordsArray, scalar); //the magic!
+
+    //increase the size for next time (this is an idea you can test once you test the main functionality)
+    // scalar = scalar + ringInc
+
+
+  })
+
 }
 
 function draw() {
-  noStroke();
+  // noStroke();
+  stroke(255)
   fill(242, 241, 232);
-  ll2poly(collectedCoords); //the magic!
 
 }
 
-function ll2poly(latlonArray) {
+function ll2poly(latlonArray, scaleFactor) {
   // local variables
   let latMin = 0; // bigger
   let latMax = 0; // smaller
@@ -149,6 +140,7 @@ function ll2poly(latlonArray) {
   //we can translate and rotate here to correct the orientation of the shape to face "north"/up
   translate(height,0);
   rotate(radians(90)) //rotate by 90 degrees
+  scale(scaleFactor)
 
   beginShape()
   //loop through each point, scale to the min/max and adda vertex for drwaing.
