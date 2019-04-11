@@ -1,99 +1,164 @@
 let socket = io.connect();
 
-let storedOriginPoint;
-// let ourDistance = Math.random() * 100;
+let collectedCoords;
 
-let ourDistance = Math.floor((Math.random()) * (300 - 75 + 1)) + 75;
-
-socket.on('origin-point',function(incomingPosition){
-
-  storedOriginPoint = incomingPosition;
-
-  $('.origin-point-readout').text('anchor: [' + Math.round(1000000*storedOriginPoint.lat)/1000000 + ', ' + Math.round(1000000*storedOriginPoint.lon)/1000000 + ']')
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function(position){
+    console.log('got location' + position)
+  }, function(){
+    console.error('location services not available.')
   });
 
-
-
-if ("geolocation" in navigator) {
-  /* geolocation is available */
-
-
-
-  // get our position every interval
-    setInterval(function(){
-
-      $('.our-distance').text('assigned distance: ' + ourDistance)
-      socket.emit('get-origin-point');
-
-      navigator.geolocation.getCurrentPosition(function(position){
-
-        // console.log(position)
-        console.log(position.coords.latitude)
-        console.log(position.coords.longitude)
-
-        //distance drom the ourigin point
-        let gd = miles2feet( calcGeoDistance(position.coords.latitude, position.coords.longitude, storedOriginPoint.lat, storedOriginPoint.lon ) )
-
-        if(gd <= ourDistance){
-          $('.current-distance-away').text( 'anchor distance: ' + Math.round( gd ) )
-
-        }else{
-          $('.current-distance-away').text("you're at the origin point, find your node!")
-        }
-
-//distance from generated node point
-let nodeDistance = distance2node( ourDistance , gd )
-// if (nodeDistance <= 0){
-console.log('nodeDistance equals 0')
-socket.emit('reached-node', {'abc': 'xyz'});
-
-
-
-
-
-if(gd <= ourDistance){
-  $('.node-distance').text('node distance: ' +  Math.round( nodeDistance ) )
 }
 
-      });
-    }, 1000)
+$('#start-game-button').on('click', function(){
+
+
+  socket.emit('start-the-game') //send the game start to the server.
+
+})
+
+//server tells us that the game has started.
+socket.on('game-started', function(){
+
+  $('#start-game-button').hide()
+
+})
+
+//get the notification from the server and send our location up!
+socket.on('gather-locations',function(){
+
+  //geolocation available
+  if (navigator.geolocation) {
+
+    //get the location, and use the functions below.
+    navigator.geolocation.getCurrentPosition(success, error);
+
+    function success(position) {
+
+      //pack up our coords
+      let ourPosition = {
+        "lat": position.coords.latitude,
+        "lon": position.coords.longitude
+      }
+
+      //send them to the server!
+      socket.emit('send-our-coords', ourPosition)
+    }
+
+  function error(err) {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+  }
+
+
+  }else{
+    console.error("no geolocetion available...")
+  }
+
+})
 
 
 
-} else {
-  /* geolocation IS NOT available */
-  console.error('no geolocation available!')
+
+socket.on('collected-coords',function(coordsArray){
+
+  // console.log(coordsArray)
+  collectedCoords = coordsArray
+
+})
+
+socket.on('game-over', function(){
+  //the game is over
+  console.log('game is over')
+  $('#start-game-button').show()
+
+})
+
+
+
+//an array of objects containing lat / lon points
+  // {"lat" : 44.964782 , "lon" : -93.276922 }
+
+
+// let latlonArray = [
+//     // {"lat" : 44.964782, "lon" : -93.276922 },
+//     // {"lat" : 44.964125, "lon" : -93.266912 },
+//     // {"lat" : 44.918733, "lon" : -93.241098 },
+//     // {"lat" : 44.924925, "lon" : -93.331771 }
+//
+//
+//   {"lat" : 44.963385, "lon" : -93.278789 },
+//   {"lat" : 44.976013, "lon" : -93.258953 },
+//   // {"lat" : 44.945031, "lon" : -93.225235 },
+//    {"lat" : 44.942499, "lon" : -93.225518 },
+//   {"lat" :  44.893919, "lon" : -93.237053 }
+//
+// ]
+
+
+function setup() {
+  createCanvas(500, 500);
+  background(0, 3, 75);
 }
 
+function draw() {
+  noStroke();
+  fill(242, 241, 232);
+  ll2poly(collectedCoords); //the magic!
 
-
-//convert miles to feet
-function miles2feet(miles){
-  return miles * 5280;
 }
 
+function ll2poly(latlonArray) {
+  // local variables
+  let latMin = 0; // bigger
+  let latMax = 0; // smaller
+  let lonMin = 0; // bigger (remember negatives)
+  let lonMax = 0; // smaller (remember negatives)
+  // might seem counterintuitive but start the max and min with opposite values.
+  //just set these to the first slot so we have something to comapre to in order to calculate the min/max
+  latMin = latlonArray[0].lat
+  latMax = latlonArray[0].lat
+  lonMin = latlonArray[0].lon
+  lonMax = latlonArray[0].lon
 
-//distance from node
+  // console.log(latMin, latMax, lonMin, lonMax);
+  // loop through each lat/lon and check to see it it's actually the min/max
+  for(let i = 0 ; i < latlonArray.length; i ++ ) {
 
-function distance2node(geoDis, genDis){
-  return geoDis-genDis;
+    if(latlonArray[i].lat >= latMin){
+      latMin = latlonArray[i].lat
+    }
+
+    if(latlonArray[i].lat <= latMax){
+      latMax = latlonArray[i].lat
+    }
+
+    if(latlonArray[i].lon >= lonMin){
+      lonMin = latlonArray[i].lon
+    }
+
+    if(latlonArray[i].lon <= lonMax){
+      lonMax = latlonArray[i].lon
+    }
+
+
+  }
+
+  //push and pop so that the styles dont change anything else in the sketch and so we can cleanly translate and rotate
+  push()
+  //we can translate and rotate here to correct the orientation of the shape to face "north"/up
+  translate(height,0);
+  rotate(radians(90)) //rotate by 90 degrees
+
+  beginShape()
+  //loop through each point, scale to the min/max and adda vertex for drwaing.
+    for(let j = 0 ; j < latlonArray.length; j++){
+      let latOut = map(latlonArray[j].lat, latMin, latMax, 0, width);
+      let lonOut = map(latlonArray[j].lon, lonMin, lonMax, 0, height);
+      // return createVector(latOut, lonOut);
+      vertex(latOut, lonOut)
+    }
+  endShape(CLOSE)
+  pop()
+
 }
-
-// http://www.movable-type.co.uk/scripts/latlong.html
-// Used Under MIT License
-function calcGeoDistance(lat1, lon1, lat2, lon2){
-
-    var R = 3959; // earth radius in Miles (default)
-
-    var dLat = (lat2-lat1) * (Math.PI / 180);
-    var dLon = (lon2-lon1) * (Math.PI / 180);
-    var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-            Math.cos(lat1 * (Math.PI / 180)) * Math.cos(lat2 * (Math.PI / 180)) *
-            Math.sin(dLon/2) * Math.sin(dLon/2);
-    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-    var d = R * c;
-    return d;
-}
-
-
-let port = process.env.PORT || 3000;
