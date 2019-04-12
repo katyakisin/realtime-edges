@@ -18,14 +18,12 @@ $('#start-game-button').on('click', function(){
 
 //server tells us that the game has started.
 socket.on('game-started', function(){
-
+//add direction picker here
   $('#start-game-button').hide()
-
 })
 
 //get the notification from the server and send our location up!
 socket.on('gather-locations',function(){
-
   //geolocation available
   if (navigator.geolocation) {
 
@@ -138,7 +136,7 @@ function ll2poly(latlonArray, scaleFactor) {
   //push and pop so that the styles dont change anything else in the sketch and so we can cleanly translate and rotate
   push()
   //we can translate and rotate here to correct the orientation of the shape to face "north"/up
-  translate(height,0);
+  translate(height,0); //manipulate position here
   rotate(radians(90)) //rotate by 90 degrees
   scale(scaleFactor)
 
