@@ -44,9 +44,10 @@ html {
   }
 
   .instructions {
+        color: #50ff00;
     background-color: black;
     padding: .25em;
-    color: #fff;
+    /* color: #fff; */
     width: 85%;
     margin: auto;
     margin-top: 3vh;
@@ -60,7 +61,6 @@ html {
   }
 
   .toProj {
-    color: #50ff00;
     width: fit-content;
     padding: 1em;
     margin: auto;
