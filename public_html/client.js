@@ -9,6 +9,8 @@ if (navigator.geolocation) {
 
 }
 
+
+
 $('#start-game-button').on('click', function(){
 
 
@@ -16,9 +18,13 @@ $('#start-game-button').on('click', function(){
 
 })
 
+
+
 //server tells us that the game has started.
 socket.on('game-started', function(){
+
 //add direction picker here
+
   $('#start-game-button').hide()
 })
 
@@ -73,7 +79,7 @@ let scalar = 1;
 
 function setup() {
   createCanvas(500, 500);
-  background(0, 3, 75);
+  background(0, 0, 0);
 
   socket.on('collected-coords',function(coordsArray){
 
@@ -152,3 +158,9 @@ function ll2poly(latlonArray, scaleFactor) {
   pop()
 
 }
+
+
+$('.toProj').on('click', function(){
+  $('.intro').hide()
+
+})

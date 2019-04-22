@@ -31,6 +31,7 @@ io.on('connection', function(socket){
     console.log('game started')
     io.emit('game-started')
 
+
     loop = setInterval(function(){
       //increase the timer so we can be sane people and use seconds.
       secondsTimer = secondsTimer + 1
