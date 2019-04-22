@@ -15,6 +15,7 @@ html {
     text-align: justify;
     width: 67vw;
     margin: auto;
+    margin-top: 5vh;
     /* text-decoration: underline; */
     padding: 0.25em;
     font-size: 60px;
@@ -68,4 +69,27 @@ html {
 
   a {
     text-decoration: none;
+  }
+
+
+  #start-game-button{
+      position: block;
+    color: black;
+    font-size: 60px;
+    margin: auto;
+    width: fit-content;
+    background-color: white;
+    margin-top: 15vh;
+    /* text-decoration: underline; */
+  }
+
+  .p5Canvas{
+    width: 100%;
+    margin:auto;
+    margin-top:10vh;
+    display: block;
+  }
+
+  .to-anchor{
+    display: block;
   }
