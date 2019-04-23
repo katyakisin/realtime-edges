@@ -5,7 +5,8 @@ html {
 }
 
 
-@media screen and (min-width:365px) {
+
+@media screen and (min-width:360px) {
   body {
     font-family: ocr-b-std, monospace;
     font-weight: 400;
@@ -14,16 +15,13 @@ html {
 
   .title {
     text-align: justify;
-    width: 67vw;
+        width: 66%;
     margin: auto;
-    margin-top: 5vh;
-
     padding: 0.25em;
-    font-size: 60px;
+    font-size: 22px;
     margin-bottom: 2vh;
     line-height: 1.3em;
     color: black;
-    /* background-color: black; */
   }
 
   .introtext {
@@ -34,26 +32,30 @@ html {
   }
 
   .intro {
-    /* position: fixed; */
+    position: fixed;
     background-color: white;
     margin: auto;
-    /* width: 93vw; */
+    /* margin-top: -11vh; */
+      width: 40%;
     padding: 5vh 2vh 2vh 2vh;
     color: black;
     font-size: 50px;
     line-height: 1.3em;
-    height: 100vh;
+    height: 70vh;
   }
 
   .instructions {
-        color: #50ff00;
+    color: #50ff00;
     background-color: black;
     padding: .25em;
     /* color: #fff; */
     width: 85%;
     margin: auto;
-    margin-top: 3vh;
-    margin-bottom: .5vh;
+    /* margin-top: 3vh; */
+    /* margin-bottom: .5vh; */
+    font-size: 20px;
+    line-height: 1.1em;
+}
   }
 
   .info {
@@ -64,9 +66,10 @@ html {
 
   .toProj {
     width: fit-content;
-    padding: 1em;
     margin: auto;
     text-decoration: underline;
+      font-size: 20px;
+
   }
 
   a {
@@ -75,14 +78,15 @@ html {
 
 
   #start-game-button{
-      position: block;
-    color: black;
-    font-size: 60px;
-    margin: auto;
-    width: fit-content;
-    background-color: white;
-    margin-top: 15vh;
-    /* text-decoration: underline; */
+    /* position: absolute; */
+  color: black;
+  font-size: 20px;
+  margin: auto;
+  width: 35%;
+  background-color: white;
+  margin-top: 15vh;
+  text-align: center;
+  /* text-decoration: underline; */
   }
 
   .p5Canvas{
