@@ -98,7 +98,7 @@ function setup() {
 
 function draw() {
   // noStroke();
-  stroke(255)
+  stroke(0)
   fill(242, 241, 232);
 
 }

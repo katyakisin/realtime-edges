@@ -4,7 +4,8 @@ html {
   margin: 0;
 }
 
-@media screen and (min-width: 440px) {
+
+@media screen and (min-width:365px) {
   body {
     font-family: ocr-b-std, monospace;
     font-weight: 400;
@@ -16,7 +17,7 @@ html {
     width: 67vw;
     margin: auto;
     margin-top: 5vh;
-    /* text-decoration: underline; */
+
     padding: 0.25em;
     font-size: 60px;
     margin-bottom: 2vh;
@@ -33,9 +34,10 @@ html {
   }
 
   .intro {
+    /* position: fixed; */
     background-color: white;
     margin: auto;
-    width: 93vw;
+    /* width: 93vw; */
     padding: 5vh 2vh 2vh 2vh;
     color: black;
     font-size: 50px;
