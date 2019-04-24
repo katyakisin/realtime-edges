@@ -64,24 +64,19 @@ socket.on('game-over', function(){
 
 // ***** START P5 STUFF *********
 
-let scalar = 0.1; //starting size
-let ringInc = 0.1
+let scalar = 0.2; //starting size
+let ringInc = 0.2;
 
 function setup() {
-
-  createCanvas(275, 275);
+  createCanvas(360, 360);
   background(0, 0, 0);
-
   socket.on('collected-coords',function(coordsArray){
     console.log(coordsArray)
-
     //draw it
     ll2poly(coordsArray, scalar); //the magic!
-
     //increase the size for next time (this is an idea you can test once you test the main functionality)
     scalar = scalar + ringInc
   })
-
 
   $('#start-game-button').on('click', function(){
     socket.emit('start-the-game') //send the game start to the server.
@@ -90,36 +85,20 @@ function setup() {
 
 }
 
-let scalar = 0.1 //starting size (1/4 of the screen size
-
-function setup() {
-  createCanvas(400, 400);
-  background(220);
-  frameRate(1)
-}
-
-
 function draw() {
-  // background(220);
-    noFill();
 
-  // every time you ping for the coords increase the scalar and do the ll2poly to draw a new one.
-
-    scalar = scalar + 0.1
-
-    ll2poly(latlonArray, scalar); //the magic!
+  stroke(0)
+  fill(242, 241, 232);
 
 }
 
-function ll2poly(latlonArray, scalar) {
-
+function ll2poly(latlonArray, scaleFactor) {
   // local variables
   let latMin = 0; // bigger
   let latMax = 0; // smaller
   let lonMin = 0; // bigger (remember negatives)
   let lonMax = 0; // smaller (remember negatives)
   // might seem counterintuitive but start the max and min with opposite values.
-
   //just set these to the first slot so we have something to comapre to in order to calculate the min/max
   latMin = latlonArray[0].lat
   latMax = latlonArray[0].lat
@@ -127,7 +106,6 @@ function ll2poly(latlonArray, scalar) {
   lonMax = latlonArray[0].lon
 
   // console.log(latMin, latMax, lonMin, lonMax);
-
   // loop through each lat/lon and check to see it it's actually the min/max
   for(let i = 0 ; i < latlonArray.length; i ++ ) {
 
@@ -150,16 +128,17 @@ function ll2poly(latlonArray, scalar) {
 
   }
 
+
   //push and pop so that the styles dont change anything else in the sketch and so we can cleanly translate and rotate
   push()
   //we can translate and rotate here to correct the orientation of the shape to face "north"/up
-
-  translate((width/2) - (scalar*width/2.5), (height/2) - (scalar*height/2.5) )
-  scale(scalar)
+  translate((width/2) - (scalar+width/2.5), (height/2) - (scalar+height/2.5)); //manipulate position here
+  scale(scaleFactor)
+  // rotate(radians(90)) //rotate by 90 degrees
 
   beginShape()
   //loop through each point, scale to the min/max and adda vertex for drwaing.
-    for(let j = 0 ; j < latlonArray.length; j ++){
+    for(let j = 0 ; j < latlonArray.length; j++){
       let latOut = map(latlonArray[j].lat, latMin, latMax, 0, width);
       let lonOut = map(latlonArray[j].lon, lonMin, lonMax, 0, height);
       // return createVector(latOut, lonOut);
@@ -167,8 +146,6 @@ function ll2poly(latlonArray, scalar) {
     }
   endShape(CLOSE)
   pop()
-
-}
 
 }
 
