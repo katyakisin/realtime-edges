@@ -90,20 +90,36 @@ function setup() {
 
 }
 
-function draw() {
+let scalar = 0.1 //starting size (1/4 of the screen size
 
-  stroke(0)
-  fill(242, 241, 232);
+function setup() {
+  createCanvas(400, 400);
+  background(220);
+  frameRate(1)
+}
+
+
+function draw() {
+  // background(220);
+    noFill();
+
+  // every time you ping for the coords increase the scalar and do the ll2poly to draw a new one.
+
+    scalar = scalar + 0.1
+
+    ll2poly(latlonArray, scalar); //the magic!
 
 }
 
-function ll2poly(latlonArray, scaleFactor) {
+function ll2poly(latlonArray, scalar) {
+
   // local variables
   let latMin = 0; // bigger
   let latMax = 0; // smaller
   let lonMin = 0; // bigger (remember negatives)
   let lonMax = 0; // smaller (remember negatives)
   // might seem counterintuitive but start the max and min with opposite values.
+
   //just set these to the first slot so we have something to comapre to in order to calculate the min/max
   latMin = latlonArray[0].lat
   latMax = latlonArray[0].lat
@@ -111,6 +127,7 @@ function ll2poly(latlonArray, scaleFactor) {
   lonMax = latlonArray[0].lon
 
   // console.log(latMin, latMax, lonMin, lonMax);
+
   // loop through each lat/lon and check to see it it's actually the min/max
   for(let i = 0 ; i < latlonArray.length; i ++ ) {
 
@@ -133,17 +150,16 @@ function ll2poly(latlonArray, scaleFactor) {
 
   }
 
-
   //push and pop so that the styles dont change anything else in the sketch and so we can cleanly translate and rotate
   push()
   //we can translate and rotate here to correct the orientation of the shape to face "north"/up
-  translate((width/2) - (scalar+width/2.5), (height/2) - (scalar+height/2.5)); //manipulate position here
-  // rotate(radians(90)) //rotate by 90 degrees
-  scale(scaleFactor)
+
+  translate((width/2) - (scalar*width/2.5), (height/2) - (scalar*height/2.5) )
+  scale(scalar)
 
   beginShape()
   //loop through each point, scale to the min/max and adda vertex for drwaing.
-    for(let j = 0 ; j < latlonArray.length; j++){
+    for(let j = 0 ; j < latlonArray.length; j ++){
       let latOut = map(latlonArray[j].lat, latMin, latMax, 0, width);
       let lonOut = map(latlonArray[j].lon, lonMin, lonMax, 0, height);
       // return createVector(latOut, lonOut);
@@ -151,6 +167,8 @@ function ll2poly(latlonArray, scaleFactor) {
     }
   endShape(CLOSE)
   pop()
+
+}
 
 }
 
