@@ -15,7 +15,7 @@ html {
     width: 88%;
     top: 15vh;
     left: 1.5vw;
-    height: 70%;
+    height: 70vh;
     padding: 5vh 2vh 2vh 2vh;
     color: black;
     font-size: 50px;
@@ -81,7 +81,7 @@ html {
     color: black;
     /* font-size: 19px; */
     line-height: 1.2em;
-    height: 68%;
+        height: 72vh;
   }
 
   .instructions {
