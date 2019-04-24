@@ -2,6 +2,9 @@ html {
   background-color: #000;
   box-sizing: border-box;
   margin: 0;
+  font-family: ocr-b-std, monospace;
+  font-weight: 400;
+  font-style: normal;
 }
 
 @media screen and (min-width:500px) {
@@ -59,7 +62,7 @@ color: black;
 
   .title {
     text-align: justify;
-        width: 66%;
+      width: 75%;
     margin: auto;
     padding: 0.25em;
     font-size: 20px;
@@ -84,8 +87,8 @@ color: black;
     left: 1vw;
     padding: 5vh 2vh 2vh 2vh;
     color: black;
-    font-size: 50px;
-    line-height: 1.3em;
+    font-size: 19px;
+  line-height: 1.2em;
 }
 
 
@@ -98,7 +101,7 @@ color: black;
     margin: auto;
     /* margin-top: 3vh; */
     /* margin-bottom: .5vh; */
-    font-size: 20px;
+      font-size: 19px;
     line-height: 1.1em;
 }
 
@@ -114,6 +117,7 @@ color: black;
     margin: auto;
     text-decoration: underline;
       font-size: 20px;
+          margin-top: 2vh;
 
   }
 
@@ -150,48 +154,42 @@ color: black;
 
   @media screen and (min-width: 375px){
   .intro {
-      position: fixed;
-      background-color: white;
-      margin: auto;
-      width: 88%;
-      top: 15vh;
-        left: 1.5vw;
-      padding: 5vh 2vh 2vh 2vh;
-      color: black;
-      font-size: 50px;
-      line-height: 1.3em;
-          height: 54%;
+    position: fixed;
+    background-color: white;
+    margin: auto;
+    width: 85%;
+    top: 15vh;
+    left: 3.5vw;
+    padding: 5vh 2vh 2vh 2vh;
+    color: black;
+    /* font-size: 50px; */
+    line-height: 1.3em;
+    height: 63%;
+}
   }
 }
 
 
 @media screen and (min-width: 768px){
 .intro {
-    position: fixed;
-    background-color: white;
-    margin: auto;
-    width: 88%;
-    top: 11vh;
-    left: 5vw;
-    padding: 5vh 2vh 2vh 2vh;
-    color: black;
-    font-size: 55px;
-    line-height: 1.3em;
+  position: fixed;
+  background-color: white;
+  margin: auto;
+  width: 58%;
+  top: 11vh;
+  left: 5vw;
+  padding: 5vh 2vh 2vh 2vh;
+  color: black;
+  line-height: 1.3em;
 }
 .instructions {
     color: #50ff00;
     background-color: black;
     padding: .25em;
-    /* color: #fff; */
     width: 85%;
     margin: auto;
-    /* margin-top: 3vh; */
-    /* margin-bottom: .5vh; */
-    font-size: 28px;
+    font-size: 25px;
     line-height: 1.2em;
 }
-
-
-
 
 }

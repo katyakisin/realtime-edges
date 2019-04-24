@@ -10,12 +10,12 @@ const io = require('socket.io')(server);
 
 //STUFF NOT TO F WITH
 let loop; //the main timing loop.
-let secondsTimer = 0
+let roundCount = 0 //keep track of how many rounds have happened
 let tempCoords = []; // gather the coords for a second before sending down to the clinets again.
 
 //GAME SETTINGS
-let gameEndTime = 30 // in seconds (this should be an even divisibe number by the intervalCoords )
-let intervalCoords = 6; //in seconds
+let totalGameRounds = 5 // how many rounds of getting the coords shoudl there begfore game ends.
+let intervalCoords = 6; //in seconds (how often to get the coords, aka. how long each round takes.)
 
 //serve out files in our public_html folder
 app.use(express.static(__dirname + '/public_html'))
@@ -34,28 +34,25 @@ io.on('connection', function(socket){
 
     loop = setInterval(function(){
       //increase the timer so we can be sane people and use seconds.
-      secondsTimer = secondsTimer + 1
+      roundCount = roundCount + 1
 
 
       //get the location on the interval using the % – modulo
-      if( secondsTimer % intervalCoords == 0){
         console.log("gather-locations")
         io.emit('gather-locations') //tell the clinets
-      }
-
-
 
       //end game condition.
-      if(secondsTimer >= gameEndTime){
+      if(roundCount >= totalGameRounds){
         //the game is over.
-        clearInterval(loop) //stop the loop
-        secondsTimer = 0; //reset the clock so we can play again
+        roundCount = 0; //reset the clock so we can play again
         io.emit('game-over')
         console.log('game-ended')
+        clearInterval(loop) //stop the loop
+
       }
 
 
-    }, 1000)
+    }, intervalCoords * 1000)
 
 
   });
