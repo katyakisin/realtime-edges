@@ -156,11 +156,11 @@ color: black;
       width: 88%;
       top: 15vh;
       left: 3vw;
-          height: 45%;
       padding: 5vh 2vh 2vh 2vh;
       color: black;
       font-size: 50px;
       line-height: 1.3em;
+          height: 54%;
   }
 }
 
@@ -177,7 +177,6 @@ color: black;
     color: black;
     font-size: 55px;
     line-height: 1.3em;
-        height: 66%;
 }
 .instructions {
     color: #50ff00;
@@ -186,21 +185,13 @@ color: black;
     /* color: #fff; */
     width: 85%;
     margin: auto;
-      margin-bottom: 5vh;
+    /* margin-top: 3vh; */
+    /* margin-bottom: .5vh; */
     font-size: 28px;
     line-height: 1.2em;
 }
 
 
-.title {
-    text-align: justify;
-    width: 73%;
-    margin: auto;
-    padding: 0.25em;
-    font-size: 24px;
-    margin-bottom: 9vh;
-    line-height: 1.3em;
-    color: black;
-}
+
 
 }
