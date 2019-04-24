@@ -175,9 +175,9 @@ color: black;
   position: fixed;
   background-color: white;
   margin: auto;
-  width: 58%;
+  width: 62%;
   top: 11vh;
-  left: 5vw;
+  left: 6vw;
   padding: 5vh 2vh 2vh 2vh;
   color: black;
   line-height: 1.3em;
@@ -188,7 +188,7 @@ color: black;
     padding: .25em;
     width: 85%;
     margin: auto;
-    font-size: 25px;
+    font-size: 22px;
     line-height: 1.2em;
 }
 
