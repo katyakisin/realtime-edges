@@ -78,7 +78,7 @@ let scalar = 1;
 // let ringInc = 0.25
 
 function setup() {
-  createCanvas(900, 900);
+  createCanvas(360, 360);
   background(0, 0, 0);
 
   socket.on('collected-coords',function(coordsArray){
