@@ -69,7 +69,7 @@ let ringInc = 0.1
 
 function setup() {
 
-  createCanvas(360, 360);
+  createCanvas(275, 275);
   background(0, 0, 0);
 
   socket.on('collected-coords',function(coordsArray){

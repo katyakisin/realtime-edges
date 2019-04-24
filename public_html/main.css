@@ -62,10 +62,10 @@ color: black;
 
   .title {
     text-align: justify;
-      width: 75%;
+    width: 86%;
     margin: auto;
     padding: 0.25em;
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 2vh;
     line-height: 1.3em;
     color: black;
@@ -97,12 +97,12 @@ color: black;
     background-color: black;
     padding: .25em;
     /* color: #fff; */
-    width: 85%;
+    width: 97%;
     margin: auto;
     /* margin-top: 3vh; */
     /* margin-bottom: .5vh; */
-      font-size: 19px;
-    line-height: 1.1em;
+    font-size: 15px;
+    line-height: 1.2em;
 }
 
 
@@ -114,10 +114,10 @@ color: black;
 
   .toProj {
     width: fit-content;
-    margin: auto;
-    text-decoration: underline;
-      font-size: 20px;
-          margin-top: 2vh;
+  margin: auto;
+  text-decoration: underline;
+  font-size: 17px;
+  margin-top: 4vh;
 
   }
 
@@ -157,15 +157,15 @@ color: black;
     position: fixed;
     background-color: white;
     margin: auto;
-    width: 85%;
-    top: 15vh;
+    width: 66%;
+    top: 7vh;
     left: 3.5vw;
     padding: 5vh 2vh 2vh 2vh;
     color: black;
     /* font-size: 50px; */
     line-height: 1.3em;
-    height: 63%;
-}
+    height: 57%;
+
   }
 }
 
