@@ -27,19 +27,21 @@ io.on('connection', function(socket){
   //log out the unique identifier for this connection
   console.log(socket.id);
 
+
+
   socket.on('start-the-game', function(){
-    console.log('game started')
-    io.emit('game-started')
+    console.log('game started');
+    io.emit('game-started');
 
 
     loop = setInterval(function(){
       //increase the timer so we can be sane people and use seconds.
-      roundCount = roundCount + 1
+      roundCount = roundCount + 1;
 
 
       //get the location on the interval using the % – modulo
-        console.log("gather-locations")
-        io.emit('gather-locations') //tell the clinets
+        console.log("gather-locations");
+        io.emit('gather-locations'); //tell the clinets
 
       //end game condition.
       if(roundCount >= totalGameRounds){
@@ -48,34 +50,28 @@ io.on('connection', function(socket){
         io.emit('game-over')
         console.log('game-ended')
         clearInterval(loop) //stop the loop
-
       }
 
-
-    }, intervalCoords * 1000)
-
-
-
-
-
-    socket.on('send-our-coords', function(clientLocaton){
-      tempCoords.push(clientLocaton)
-
-      //get total connections to the Server
-      let connections = socket.client.conn.server.clientsCount; // <------COME BACK TO THIS
-      console.log(`total number of connections: ${ connections }` )
-
-      if(tempCoords.length === connections){
-        console.log('send-gathered-coords')
-        io.emit('collected-coords', tempCoords )
-
-        //erase the array for next time
-        tempCoords = [];
-      }
-
-    })
+    }, 10 * 1000)
 
   });
+
+  socket.on('send-our-coords', function(clientLocaton){
+    tempCoords.push(clientLocaton)
+
+    //get total connections to the Server
+    let connections = socket.client.conn.server.clientsCount; // <------COME BACK TO THIS
+    console.log(`total number of connections: ${ connections }` )
+
+    if(tempCoords.length == connections){
+      console.log('send-gathered-coords')
+      io.emit('collected-coords', tempCoords )
+
+      //erase the array for next time
+      tempCoords = [];
+    }
+
+  })
 
 
 
