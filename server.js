@@ -10,11 +10,11 @@ const io = require('socket.io')(server);
 
 //STUFF NOT TO F WITH
 let loop; //the main timing loop.
-let roundCount = 0 //keep track of how many rounds have happened
+let roundCount = 0; //keep track of how many rounds have happened
 let tempCoords = []; // gather the coords for a second before sending down to the clinets again.
 
 //GAME SETTINGS
-let totalGameRounds = 4 // how many rounds of getting the coords shoudl there begfore game ends.
+let totalGameRounds = 4; // how many rounds of getting the coords shoudl there begfore game ends.
 let intervalCoords = 30; //in seconds (how often to get the coords, aka. how long each round takes.)
 
 //serve out files in our public_html folder
@@ -55,26 +55,27 @@ io.on('connection', function(socket){
     }, intervalCoords * 1000)
 
 
+
+
+
+    socket.on('send-our-coords', function(clientLocaton){
+      tempCoords.push(clientLocaton)
+
+      //get total connections to the Server
+      let connections = socket.client.conn.server.clientsCount; // <------COME BACK TO THIS
+      console.log(`total number of connections: ${ connections }` )
+
+      if(tempCoords.length === connections){
+        console.log('send-gathered-coords')
+        io.emit('collected-coords', tempCoords )
+
+        //erase the array for next time
+        tempCoords = [];
+      }
+
+    })
+
   });
-
-
-  socket.on('send-our-coords', function(clientLocaton){
-    tempCoords.push(clientLocaton)
-
-    //get total connections to the Server
-    let connections = socket.client.conn.server.clientsCount; // <------COME BACK TO THIS
-    console.log(`total number of connections: ${ connections }` )
-
-    if(tempCoords.length === connections){
-      console.log('send-gathered-coords')
-
-      io.emit('collected-coords', tempCoords )
-
-      //erase the array for next time
-      tempCoords = [];
-    }
-
-  })
 
 
 
