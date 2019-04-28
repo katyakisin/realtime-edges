@@ -68,7 +68,7 @@ let scalar = 0.2; //starting size
 let ringInc = 0.2;
 
 function setup() {
-  createCanvas(360, 360);
+  createCanvas(windowWidth,windowHeight);
   background(0, 0, 0);
   socket.on('collected-coords',function(coordsArray){
     console.log(coordsArray)
