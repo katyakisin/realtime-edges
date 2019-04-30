@@ -42,6 +42,7 @@ socket.on('game-over', function() {
   //the game is over
   console.log('game is over');
   $('#start-game-button').show();
+  scalar = 0.2
 })
 
 
