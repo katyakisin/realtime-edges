@@ -15,19 +15,16 @@ let tempCoords = []; // gather the coords for a second before sending down to th
 
 //GAME SETTINGS
 let totalGameRounds = 4; // how many rounds of getting the coords shoudl there begfore game ends.
-let intervalCoords = 30; //in seconds (how often to get the coords, aka. how long each round takes.)
+let intervalCoords = 10; //in seconds (how often to get the coords, aka. how long each round takes.)
 
 //serve out files in our public_html folder
 app.use(express.static(__dirname + '/public_html'))
-
 
 //socket == clinet
 // io == server
 io.on('connection', function(socket){
   //log out the unique identifier for this connection
   console.log(socket.id);
-
-
 
   socket.on('start-the-game', function(){
     console.log('game started');
@@ -52,7 +49,7 @@ io.on('connection', function(socket){
         clearInterval(loop) //stop the loop
       }
 
-    }, 10 * 1000)
+    }, intervalCoords * 1000)
 
   });
 
@@ -63,18 +60,14 @@ io.on('connection', function(socket){
     let connections = socket.client.conn.server.clientsCount; // <------COME BACK TO THIS
     console.log(`total number of connections: ${ connections }` )
 
-    if(tempCoords.length == connections){
+    if(tempCoords.length === connections){
       console.log('send-gathered-coords')
       io.emit('collected-coords', tempCoords )
-
       //erase the array for next time
       tempCoords = [];
     }
 
   })
-
-
-
 })
 
 
