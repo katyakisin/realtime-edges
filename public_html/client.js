@@ -1,36 +1,21 @@
 let socket = io.connect();
-
 //when page loads-ask to get location
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(function(position) {
     console.log('got location' + position)
   }, function() {
     console.error('location services not available.')
-
     //return to user that they can't use app w/o location
-    //tell them to reload 
+    //tell them to reload
   });
-
 }
-
-
-
-//server tells us that the game has started.
-socket.on('game-started', function() {
-
-  //add direction picker here
-
-  $('#start-game-button').hide()
-})
 
 //get the notification from the server and send our location up!
 socket.on('gather-locations', function() {
   //geolocation available
   if (navigator.geolocation) {
-
     //get the location, and use the functions below.
     navigator.geolocation.getCurrentPosition(success, error);
-
     function success(position) {
 
       //pack up our coords
@@ -52,7 +37,6 @@ socket.on('gather-locations', function() {
   }
 
 })
-
 socket.on('game-over', function() {
   //the game is over
   console.log('game is over');
@@ -62,9 +46,8 @@ socket.on('game-over', function() {
 
 // ***** START P5 STUFF *********
 
-let scalar = 0.15; //starting size
-let ringInc = 0.15;
-
+let scalar = 0.2; //starting size
+let ringInc = 0.2;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0, 0, 0);
@@ -79,6 +62,14 @@ function setup() {
   $('#start-game-button').on('click', function() {
     socket.emit('start-the-game'); //send the game start to the server.
     background(0);
+  })
+
+  //server tells us that the game has started.
+  socket.on('game-started', function() {
+    //add direction picker here
+    $('#start-game-button').hide()
+    background(0);
+
   })
 
 }
@@ -112,15 +103,12 @@ function ll2poly(latlonArray, scaleFactor) {
     if (latlonArray[i].lat >= latMin) {
       latMin = latlonArray[i].lat
     }
-
     if (latlonArray[i].lat <= latMax) {
       latMax = latlonArray[i].lat
     }
-
     if (latlonArray[i].lon >= lonMin) {
       lonMin = latlonArray[i].lon
     }
-
     if (latlonArray[i].lon <= lonMax) {
       lonMax = latlonArray[i].lon
     }
@@ -132,7 +120,7 @@ function ll2poly(latlonArray, scaleFactor) {
   //push and pop so that the styles dont change anything else in the sketch and so we can cleanly translate and rotate
   push()
   //we can translate and rotate here to correct the orientation of the shape to face "north"/up
-  translate((width / 2) - (scalar + width / 2.5), (height / 2) - (scalar + height / 2.5)); //manipulate position here
+  translate((width / 2) - (scalar + width / 2), (height / 2) - (scalar + height / 2)); //manipulate position here
   scale(scaleFactor)
   // rotate(radians(90)) //rotate by 90 degrees
 
