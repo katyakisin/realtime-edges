@@ -1,5 +1,6 @@
 let socket = io.connect();
 //when page loads-ask to get location
+
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(function(position) {
     console.log('got location' + position)
@@ -120,7 +121,7 @@ function ll2poly(latlonArray, scaleFactor) {
   //push and pop so that the styles dont change anything else in the sketch and so we can cleanly translate and rotate
   push()
   //we can translate and rotate here to correct the orientation of the shape to face "north"/up
-  translate((width / 2) - (scalar + width / 2), (height / 2) - (scalar + height / 2)); //manipulate position here
+  translate((width / 4) - (scalar + width / 4), (height / 3) - (scalar + height / 3)); //manipulate position here
   scale(scaleFactor)
   // rotate(radians(90)) //rotate by 90 degrees
 
