@@ -15,7 +15,7 @@ let tempCoords = []; // gather the coords for a second before sending down to th
 
 //GAME SETTINGS
 let totalGameRounds = 4; // how many rounds of getting the coords shoudl there begfore game ends.
-let intervalCoords = 10; //in seconds (how often to get the coords, aka. how long each round takes.)
+let intervalCoords = 15; //in seconds (how often to get the coords, aka. how long each round takes.)
 
 //serve out files in our public_html folder
 app.use(express.static(__dirname + '/public_html'))
@@ -34,7 +34,6 @@ io.on('connection', function(socket){
     loop = setInterval(function(){
       //increase the timer so we can be sane people and use seconds.
       roundCount = roundCount + 1;
-
 
       //get the location on the interval using the % – modulo
         console.log("gather-locations");
@@ -55,11 +54,10 @@ io.on('connection', function(socket){
 
   socket.on('send-our-coords', function(clientLocaton){
     tempCoords.push(clientLocaton)
-
+    console.log(tempCoords)
     //get total connections to the Server
     let connections = socket.client.conn.server.clientsCount; // <------COME BACK TO THIS
     console.log(`total number of connections: ${ connections }` )
-
     if(tempCoords.length === connections){
       console.log('send-gathered-coords')
       io.emit('collected-coords', tempCoords )
