@@ -57,7 +57,9 @@ function setup() {
   socket.on('collected-coords', function(coordsArray) {
     console.log(coordsArray)
     //draw it
+
     ll2poly(coordsArray, scalar); //the magic!
+      console.log("draw shape");
     //increase the size for next time (this is an idea you can test once you test the main functionality)
     scalar = scalar + ringInc;
   })
@@ -139,7 +141,7 @@ function ll2poly(latlonArray, scaleFactor) {
   endShape(CLOSE)
   pop()
 
-  console.log("draw shape");
+
 
 }
 
