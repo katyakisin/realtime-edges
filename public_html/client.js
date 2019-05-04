@@ -48,14 +48,15 @@ socket.on('game-over', function() {
 
 // ***** START P5 STUFF *********
 
-let scalar = 0.2; //starting size
-let ringInc = 0.2;
+let scalar = 0.25; //starting size
+let ringInc = 0.25;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0, 0, 0);
   socket.on('collected-coords', function(coordsArray) {
     console.log(coordsArray)
     //draw it
+
     ll2poly(coordsArray, scalar); //the magic!
       console.log("draw shape");
     //increase the size for next time (this is an idea you can test once you test the main functionality)
@@ -63,7 +64,7 @@ function setup() {
   })
 
   $('#start-game-button').on('click', function() {
-      scalar = 0.2;
+      scalar = 0.25;
     socket.emit('start-the-game'); //send the game start to the server.
     background(0);
   })
