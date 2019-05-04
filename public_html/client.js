@@ -81,7 +81,8 @@ function setup() {
 
 function draw() {
     fill(242, 241, 232);
-    stroke(0);
+    stroke(4);
+    strokeWeight(4);
 }
 
 function ll2poly(latlonArray, scaleFactor) {
