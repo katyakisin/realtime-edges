@@ -48,6 +48,8 @@ io.on('connection', function(socket){
         clearInterval(loop) //stop the loop
       }
 
+      scalar = scalar + ringInc;
+
     }, intervalCoords * 1000)
 
   });

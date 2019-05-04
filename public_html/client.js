@@ -48,15 +48,14 @@ socket.on('game-over', function() {
 
 // ***** START P5 STUFF *********
 
-let scalar = 0.15; //starting size
-let ringInc = 0.15;
+let scalar = 0.2; //starting size
+let ringInc = 0.2;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0, 0, 0);
   socket.on('collected-coords', function(coordsArray) {
     console.log(coordsArray)
     //draw it
-
     ll2poly(coordsArray, scalar); //the magic!
       console.log("draw shape");
     //increase the size for next time (this is an idea you can test once you test the main functionality)
@@ -64,7 +63,7 @@ function setup() {
   })
 
   $('#start-game-button').on('click', function() {
-      scalar = 0.15;
+      scalar = 0.2;
     socket.emit('start-the-game'); //send the game start to the server.
     background(0);
   })
@@ -82,7 +81,7 @@ function setup() {
 function draw() {
     fill(242, 241, 232);
     stroke(4);
-    strokeWeight(4);
+    strokeWeight(2);
 }
 
 function ll2poly(latlonArray, scaleFactor) {
@@ -124,7 +123,7 @@ function ll2poly(latlonArray, scaleFactor) {
   push()
   //we can translate and rotate here to correct the orientation of the shape to face "north"/up
   // translate((width / 5) - (scalar + width / 5), (height / 2) - (scalar + height / 2)); //manipulate position here
-  translate(width/2, height/2.5) //move the whole thing to the center of the screen
+  translate(width/2.5, height/2.5) //move the whole thing to the center of the screen
   translate(-scalar*width/2.5, -scalar*height/2.5) //move the origin point of the shape to the center instead of the top left corner
   scale(scaleFactor)
   // rotate(radians(90)) //rotate by 90 degrees
