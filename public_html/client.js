@@ -86,6 +86,7 @@ function draw() {
 }
 
 function ll2poly(latlonArray, scaleFactor) {
+
   // local variables
   let latMin = 0; // bigger
   let latMax = 0; // smaller
@@ -139,6 +140,8 @@ function ll2poly(latlonArray, scaleFactor) {
   }
   endShape(CLOSE)
   pop()
+
+  console.log("draw shape")
 
 }
 
