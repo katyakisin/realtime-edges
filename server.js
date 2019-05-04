@@ -14,7 +14,7 @@ let roundCount = 0; //keep track of how many rounds have happened
 let tempCoords = []; // gather the coords for a second before sending down to the clinets again.
 
 //GAME SETTINGS
-let totalGameRounds = 10; // how many rounds of getting the coords shoudl there begfore game ends.
+let totalGameRounds = 5; // how many rounds of getting the coords shoudl there begfore game ends.
 let intervalCoords = 10; //in seconds (how often to get the coords, aka. how long each round takes.)
 
 //serve out files in our public_html folder
