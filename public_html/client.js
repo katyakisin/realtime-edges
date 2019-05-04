@@ -78,8 +78,8 @@ function setup() {
 
 function draw() {
 
-  stroke(0)
-  fill(242, 241, 232);
+  stroke(242, 241, 232);
+  fill(0);
 
 
 
