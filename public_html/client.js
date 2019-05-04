@@ -38,11 +38,12 @@ socket.on('gather-locations', function() {
   }
 
 })
+
 socket.on('game-over', function() {
   //the game is over
   console.log('game is over');
   $('#start-game-button').show();
-  scalar = 0.2
+  scalar = 0.2;
 })
 
 
@@ -77,7 +78,7 @@ function setup() {
 }
 
 function draw() {
-  blendMode(EXCLUSION);
+  // blendMode(EXCLUSION);
     fill(242, 241, 232);
     stroke(0);
 }
