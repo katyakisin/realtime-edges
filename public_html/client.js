@@ -77,12 +77,9 @@ function setup() {
 }
 
 function draw() {
-
-  stroke(242, 241, 232);
-  fill(0);
-
-
-
+  blendMode(EXCLUSION);
+    fill(242, 241, 232);
+    stroke(0);
 }
 
 function ll2poly(latlonArray, scaleFactor) {
