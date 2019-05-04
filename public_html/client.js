@@ -128,7 +128,7 @@ function ll2poly(latlonArray, scaleFactor) {
   translate(width/2, height/2) //move the whole thing to the center of the screen
   translate(-scalar*width/2.5, -scalar*height/2.5) //move the origin point of the shape to the center instead of the top left corner
 
-  // rotate(radians(90)) //rotate by 90 degrees
+   rotate(radians(90)) //rotate by 90 degrees
 
   beginShape()
   //loop through each point, scale to the min/max and adda vertex for drwaing.
