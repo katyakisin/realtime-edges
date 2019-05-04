@@ -128,11 +128,11 @@ html {
   }
 
   .p5Canvas {
-    width: 100vw;
+    /* width: 100vw;
     margin: auto;
     margin-top: 10vh;
     display: block;
-    margin-left: 1vw;
+    margin-left: 1vw; */
   }
 
   .to-anchor {
