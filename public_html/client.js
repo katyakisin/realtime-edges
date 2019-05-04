@@ -81,8 +81,9 @@ function setup() {
 
 function draw() {
   blendMode(SCREEN);
+  background(255, 50, 50);
     fill(242, 241, 232);
-    stroke(255, 50, 50);
+    stroke(0);
 }
 
 function ll2poly(latlonArray, scaleFactor) {
