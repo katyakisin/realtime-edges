@@ -74,9 +74,9 @@ io.on('connection', function(socket){
 
 
 
-let port = process.env.PORT || 8000;
+let port = process.env.PORT || 3000;
 // turn on our server so it can recieve requests.
 server.listen(port, function(){
-  console.log('app is listening on port 8000!');
+  console.log('app is listening on port 3000!');
   console.log('so cool!');
 })
