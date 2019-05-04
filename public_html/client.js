@@ -43,14 +43,14 @@ socket.on('game-over', function() {
   //the game is over
   console.log('game is over');
   $('#start-game-button').show();
-  scalar = 0.2;
+  scalar = 0.3;
 })
 
 
 // ***** START P5 STUFF *********
 
-let scalar = 0.2; //starting size
-let ringInc = 0.2;
+let scalar = 0.3; //starting size
+let ringInc = 0.3;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0, 0, 0);
@@ -59,7 +59,7 @@ function setup() {
     //draw it
 
     ll2poly(coordsArray, scalar); //the magic!
-      console.log("draw shape");
+      // console.log("draw shape");
     //increase the size for next time (this is an idea you can test once you test the main functionality)
     scalar = scalar + ringInc;
   })
@@ -80,9 +80,9 @@ function setup() {
 }
 
 function draw() {
-  blendMode(EXCLUSION);
+  blendMode(SCREEN);
     fill(242, 241, 232);
-    stroke(0);
+    stroke(255, 50, 50);
 }
 
 function ll2poly(latlonArray, scaleFactor) {
