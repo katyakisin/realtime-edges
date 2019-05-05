@@ -123,7 +123,7 @@ function ll2poly(latlonArray, scaleFactor) {
   push()
   //we can translate and rotate here to correct the orientation of the shape to face "north"/up
   // translate((width / 5) - (scalar + width / 5), (height / 2) - (scalar + height / 2)); //manipulate position here
-  translate(width/2.5, height/2.75) //move the whole thing to the center of the screen
+  translate(width/2, height/2) //move the whole thing to the center of the screen
   translate(-scalar*width/2, -scalar*height/2) //move the origin point of the shape to the center instead of the top left corner
   scale(scaleFactor)
   // rotate(radians(90)) //rotate by 90 degrees
