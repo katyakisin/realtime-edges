@@ -79,9 +79,9 @@ function setup() {
 }
 
 function draw() {
-    fill(4);
-    stroke(242, 241, 232);
-    strokeWeight(2);
+    fill(0);
+    stroke(80,255,0);
+    strokeWeight(10);
 }
 
 function ll2poly(latlonArray, scaleFactor) {
@@ -124,7 +124,7 @@ function ll2poly(latlonArray, scaleFactor) {
   //we can translate and rotate here to correct the orientation of the shape to face "north"/up
   // translate((width / 5) - (scalar + width / 5), (height / 2) - (scalar + height / 2)); //manipulate position here
   translate(width/2.5, height/2.5) //move the whole thing to the center of the screen
-  translate(-scalar*width/2.5, -scalar*height/2.5) //move the origin point of the shape to the center instead of the top left corner
+  translate(-scalar*width/2.25, -scalar*height/2.25) //move the origin point of the shape to the center instead of the top left corner
   scale(scaleFactor)
   // rotate(radians(90)) //rotate by 90 degrees
 
