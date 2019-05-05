@@ -79,8 +79,8 @@ function setup() {
 }
 
 function draw() {
-  noFill();
-    stroke(80,255,0);
+  stroke(0);
+    fil(236,236,218);
     strokeWeight(5);
 }
 
