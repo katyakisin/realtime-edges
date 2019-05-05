@@ -56,11 +56,10 @@ function setup() {
   socket.on('collected-coords', function(coordsArray) {
     console.log(coordsArray)
     //draw it
-
     ll2poly(coordsArray, scalar); //the magic!
       console.log("draw shape");
     //increase the size for next time (this is an idea you can test once you test the main functionality)
-    scalar = scalar + ringInc;
+
   })
 
   $('#start-game-button').on('click', function() {
@@ -139,13 +138,10 @@ function ll2poly(latlonArray, scaleFactor) {
   }
   endShape(CLOSE)
   pop()
-
-
-
+  scalar = scalar + ringInc;
 }
 
 
 $('.toProj').on('click', function() {
   $('.intro').hide()
-
 })

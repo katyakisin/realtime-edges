@@ -47,9 +47,6 @@ io.on('connection', function(socket){
         console.log('game-ended')
         clearInterval(loop) //stop the loop
       }
-
-      scalar = scalar + ringInc;
-
     }, intervalCoords * 1000)
 
   });
@@ -66,7 +63,6 @@ io.on('connection', function(socket){
       //erase the array for next time
       tempCoords = [];
     }
-
   })
 })
 
