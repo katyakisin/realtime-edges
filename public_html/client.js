@@ -79,7 +79,7 @@ function setup() {
 }
 
 function draw() {
-    fill(none);
+  noFill();
     stroke(80,255,0);
     strokeWeight(5);
 }
