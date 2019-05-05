@@ -83,7 +83,7 @@ function draw() {
   // noStroke();
     strokeWeight(20);
     stroke(236,236,218);
-    fill();
+    fill(236,236,218));
 
 }
 
