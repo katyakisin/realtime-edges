@@ -79,7 +79,7 @@ function setup() {
 }
 
 function draw() {
-  blendMode(EXCLUSION);
+  blendMode(SCREEN);
   stroke(0);
     fill(236,236,218);
     strokeWeight(2);
