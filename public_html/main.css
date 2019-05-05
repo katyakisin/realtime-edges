@@ -1,5 +1,5 @@
 html {
-  background-color: #000;
+  background-color: #fff;
   box-sizing: border-box;
   margin: 0;
   font-family: ocr-b-std, monospace;
@@ -133,6 +133,7 @@ html {
     margin-top: 10vh;
     display: block;
     margin-left: 1vw; */
+    height: 95vh;
   }
 
   .to-anchor {
