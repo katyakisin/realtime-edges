@@ -79,7 +79,7 @@ function setup() {
 }
 
 function draw() {
-  blendMode(OVERLAY);
+  // blendMode(OVERLAY);
     strokeWeight(2);
     stroke(0);
     fill(236,236,218);
