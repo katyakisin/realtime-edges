@@ -9,12 +9,13 @@ html,body {
   font-family: ocr-b-std, monospace;
   font-weight: 400;
   font-style: normal;
-   overflow: hidden; 
+  overflow-x:hidden
 }
 
-canvas{
+/* canvas{
    height: 60%;
-}
+   overflow-x:hidden
+} */
 
 @media screen and (min-width:500px) {
   .intro {
