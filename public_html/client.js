@@ -48,8 +48,8 @@ socket.on('game-over', function() {
 
 // ***** START P5 STUFF *********
 
-let scalar = 0.2; //starting size
-let ringInc = 0.2;
+let scalar = 0.15; //starting size
+let ringInc = 0.15;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0, 0, 0);
@@ -63,7 +63,6 @@ function setup() {
   })
 
   $('#start-game-button').on('click', function() {
-      scalar = 0.2;
     socket.emit('start-the-game'); //send the game start to the server.
     background(0);
   })
@@ -71,6 +70,7 @@ function setup() {
   //server tells us that the game has started.
   socket.on('game-started', function() {
     //add direction picker here
+    scalar = 0.15;
     $('#start-game-button').hide()
     background(0);
 
@@ -79,7 +79,7 @@ function setup() {
 }
 
 function draw() {
-  blendMode(OVERLAY);
+  // blendMode(OVERLAY);
   noStroke();
     // strokeWeight(1);
     // stroke(0);
