@@ -51,7 +51,7 @@ socket.on('game-over', function() {
 let scalar = 0.2; //starting size
 let ringInc = 0.2;
 function setup() {
-  createCanvas(windowWidth, windowHeight(.9));
+  createCanvas(windowWidth, windowHeight);
   background(0, 0, 0);
   socket.on('collected-coords', function(coordsArray) {
     console.log(coordsArray)
