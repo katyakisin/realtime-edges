@@ -80,10 +80,10 @@ function setup() {
 
 function draw() {
   // blendMode(OVERLAY);
-  noStroke();
-    // strokeWeight(1);
-    // stroke(0);
-    fill(236,236,218);
+  // noStroke();
+    strokeWeight(20);
+    stroke(236,236,218);
+    fill();
 
 }
 
