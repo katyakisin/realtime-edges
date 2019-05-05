@@ -1,5 +1,9 @@
+*{
+  margin: 0;
+}
+
 html {
-  background-color: #fff;
+  background-color: #000;
   box-sizing: border-box;
   margin: 0;
   font-family: ocr-b-std, monospace;
@@ -116,25 +120,18 @@ html {
   }
 
   #start-game-button {
-    position: absolute;
+    /* position: absolute; */
     color: black;
     font-size: 19px;
     margin: auto;
-      width: 38%;
+        width: fit-content;
     background-color: #FFF;
     margin-top: 15vh;
     text-align: center;
     /* text-decoration: underline; */
+    padding: 3px;
   }
 
-  .p5Canvas {
-    /* width: 100vw;
-    margin: auto;
-    margin-top: 10vh;
-    display: block;
-    margin-left: 1vw; */
-    height: 95vh;
-  }
 
   .to-anchor {
     display: block;
