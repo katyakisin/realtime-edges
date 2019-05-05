@@ -15,7 +15,7 @@ let tempCoords = []; // gather the coords for a second before sending down to th
 
 //GAME SETTINGS
 let totalGameRounds = 3; // how many rounds of getting the coords shoudl there begfore game ends.
-let intervalCoords = 20; //in seconds (how often to get the coords, aka. how long each round takes.)
+let intervalCoords = 30; //in seconds (how often to get the coords, aka. how long each round takes.)
 
 //serve out files in our public_html folder
 app.use(express.static(__dirname + '/public_html'))
