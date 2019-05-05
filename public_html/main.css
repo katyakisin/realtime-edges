@@ -116,11 +116,11 @@ html {
   }
 
   #start-game-button {
-    /* position: absolute; */
+    position: absolute;
     color: black;
     font-size: 19px;
     margin: auto;
-        width: 38%;
+      width: 38%;
     background-color: #FFF;
     margin-top: 15vh;
     text-align: center;
