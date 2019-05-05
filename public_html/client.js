@@ -79,9 +79,10 @@ function setup() {
 }
 
 function draw() {
+  blendMode(EXCLUSION);
   stroke(0);
-    fil(236,236,218);
-    strokeWeight(5);
+    fill(236,236,218);
+    strokeWeight(2);
 }
 
 function ll2poly(latlonArray, scaleFactor) {
