@@ -83,6 +83,7 @@ function draw() {
     strokeWeight(2);
     stroke(0);
     fill(236,236,218);
+    background(0);
 }
 
 function ll2poly(latlonArray, scaleFactor) {
