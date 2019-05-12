@@ -10,19 +10,13 @@ html,body {
   font-weight: 400;
   font-style: normal;
   /* overflow-x:hidden */
-
 overflow: hidden !important;
 }
-
-/* canvas{
-   height: 60%;
-   overflow-x:hidden
-} */
 
 @media screen and (min-width:500px) {
   .intro {
     position: fixed;
-    background-color: white;
+    background-color: #ececda;
     margin: auto;
     width: 88%;
     top: 7vh;
@@ -46,7 +40,7 @@ overflow: hidden !important;
   }
 
   .instructions {
-    color: #50ff00;
+    color: #ececda;
     background-color: black;
     padding: .25em;
     width: 85%;
@@ -65,8 +59,8 @@ overflow: hidden !important;
   }
 
   .title {
-    text-align: justify;
-    width: 86%;
+    text-align: center;
+
     margin: auto;
     padding: 0.25em;
     font-size: 18px;
@@ -84,28 +78,28 @@ overflow: hidden !important;
 
   .intro {
     position: fixed;
-    background-color: white;
+    background-color: #ececda;
     margin: auto;
     width: 88%;
-      top: 5vh;
-    left: 1.5vw;
+    top: 12vh;
+    left: 3vw;
     padding: 5vh 2vh 2vh 2vh;
     color: black;
     /* font-size: 19px; */
     line-height: 1.2em;
-        height: 72vh;
+    height: 64vh;
   }
 
   .instructions {
-    color: #50ff00;
+    color: #ececda;
     background-color: black;
     padding: .25em;
     /* color: #fff; */
-    width: 97%;
+    width: 75%;
     margin: auto;
-    /* margin-top: 3vh; */
+    margin-top: 4vh;
     /* margin-bottom: .5vh; */
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.2em;
   }
 
@@ -129,11 +123,13 @@ overflow: hidden !important;
 
   #start-game-button {
     /* position: absolute; */
-    color: black;
+    color:  black;
+    background-color:#ececda;
     font-size: 19px;
     margin: auto;
-        width: fit-content;
-    background-color: #FFF;
+    width: fit-content;
+    /* background-color:; */
+
     margin-top: 15vh;
     text-align: center;
     /* text-decoration: underline; */
@@ -148,22 +144,23 @@ overflow: hidden !important;
 @media screen and (min-width: 375px) {
   .intro {
     position: fixed;
-    background-color: white;
+    background-color: #ececda;
     margin: auto;
     width: 84%;
-      top: 3vh;
+    top: 9vh;
     left: 3.5vw;
     padding: 5vh 2vh 2vh 2vh;
     color: black;
     /* font-size: 50px; */
     line-height: 1.3em;
-      height: 75%;
+  height: 58vh;
   }
 
 
 .instructions{
-  font-size: 20px;
-      margin-top: 5vh;
+  font-size: 15px;
+  margin-top: 3vh;
+      width: 86%;
 }
 
 
@@ -178,11 +175,11 @@ overflow: hidden !important;
 
   .intro {
     position: fixed;
-    background-color: white;
+    background-color: #ececda;
     margin: auto;
     width: 62%;
       top: 14vh;
-    height: 46%;
+      height: 58%;
     left: 17vw;
     padding: 5vh 2vh 2vh 2vh;
     color: black;
@@ -190,12 +187,12 @@ overflow: hidden !important;
   }
 
   .instructions {
-    color: #50ff00;
+    color: #ececda;
     background-color: black;
     padding: .25em;
-    width: 85%;
+    width: 62%;
     margin: auto;
-    font-size: 22px;
+    font-size: 15px;
     line-height: 1.2em;
   }
 }
@@ -205,14 +202,21 @@ overflow: hidden !important;
 @media screen and (min-width: 1024px) {
 
 .intro{
-          height: 60%;
+  margin: auto;
+      height: 72%;
+          width: 50%;
 }
-.instructions{
-  font-size: 26px;
+
+
+.instructions {
+    font-size: 17px;
+    width: 65%;
+        margin-top: 5vh;
 }
 
 .title{
-      font-size: 25px;
+  text-align: center;
+  font-size: 19px;
 }
 
 .toProj{

@@ -40,7 +40,7 @@ io.on('connection', function(socket){
         io.emit('gather-locations'); //tell the clinets
 
       //end game condition.
-      if(roundCount == totalGameRounds){
+      if(roundCount = totalGameRounds){
         //the game is over.
         roundCount = 0; //reset the clock so we can play again
         io.emit('game-over')
