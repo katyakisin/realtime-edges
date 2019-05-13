@@ -22,7 +22,7 @@ html, body {
   height: 60vh;
   padding: 5vh 2vh 2vh 2vh;
   color: black;
-  font-size: 50px;
+  font-size: 20pt;
   line-height: 1.3em;
 }
 
@@ -38,7 +38,7 @@ html, body {
   text-align: center;
   width: 46%;
   margin: auto;
-  font-size: 20px;
+  font-size: 24px;
   margin-bottom: 4vh;
   line-height: 1.3em;
   color: #ececda;
@@ -118,7 +118,7 @@ html, body {
   .intro {    width: 80%;
   height: 55%;}
 
-  .tite{
-    font-size: 20px;
+  .title{
+    font-size: 18px;
   }
 }
