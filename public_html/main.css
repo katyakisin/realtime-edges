@@ -69,7 +69,7 @@ html, body {
   top: 17vh;
   margin: 0 auto !important;
   display: block;
-  width: 10%;
+      width: fit-content;
   padding: 2px;
   font-size: 18px;
   text-align: center;
@@ -126,7 +126,7 @@ html, body {
 
   .instructions {
     font-size: 12pt;
-      width: 78%;
+        width: 94%;
   }
 
   #start-game-button {
