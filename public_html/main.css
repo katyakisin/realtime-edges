@@ -124,5 +124,9 @@ html, body {
     font-size: 18px;
   }
 
+  .instructions {
+    font-size: 12pt;
+  }
+
 
 }
