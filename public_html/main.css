@@ -9,7 +9,7 @@ html, body {
   font-family: ocr-b-std, monospace;
   font-weight: 400;
   font-style: normal;
-  overflow: hidden !important;
+  overflow-x: hidden !important;
 }
 
 .intro {
@@ -60,9 +60,8 @@ html, body {
   text-align: center;
   margin: auto;
   margin-top: 6vh;
-  font-size: 16px;
+  font-size: 14px;
   width: 16%;
-  padding: -6px;
   border: 1.5pt solid black;
 }
 
@@ -122,6 +121,6 @@ html, body {
     font-size: 18px;
   }
   .instructions{
-    font-size: 10px;
+    font-size: 12px;
   }
 }
