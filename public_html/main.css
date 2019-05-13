@@ -115,7 +115,9 @@ html, body {
 }
 
 @media screen and (max-width:580px) {
-  .intro {    width: 80%;
+  .intro {
+      top: 4vh;   
+    width: 80%;
   height: 55%;}
 
   .title{
