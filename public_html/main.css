@@ -116,12 +116,13 @@ html, body {
 
 @media screen and (max-width:580px) {
   .intro {
-      top: 4vh;   
-    width: 80%;
+      top: 4vh;
+    width: 85%;
   height: 55%;}
 
   .title{
-    font-size: 20px;
+    font-size: 18px;
   }
+
 
 }
