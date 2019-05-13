@@ -13,6 +13,9 @@ html, body {
   overflow: hidden !important;
 }
 
+body{
+    overflow: hidden !important;
+}
 .intro {
   z-index: 10;
   position: relative;
