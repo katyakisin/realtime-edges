@@ -14,8 +14,11 @@ html {
 }
 
 body{
+  position: fixed;
     overflow: hidden !important;
 }
+
+
 .intro {
   z-index: 10;
   position: relative;
@@ -99,18 +102,26 @@ body{
 
 @media screen and (max-width:1023px) {
   .intro {
+      height: 50%;
     width: 70%;
+  }
+  .toProj{
+        padding: 5px;
   }
 }
 
 @media screen and (max-width:800px) {
+  .intro{
+        height: 50%;
+  }
+
   .title {
         width: 100%;
-        font-size:
+
   }
 
   .instructions {
-    font-size: 12pt;
+    font-size: 11pt;
   }
 
   .toProj {
