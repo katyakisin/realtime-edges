@@ -56,26 +56,28 @@ html, body {
 }
 
 .toProj {
-  line-height: 1.8em;
+  line-height: 1em;
   text-align: center;
   margin: auto;
   margin-top: 6vh;
   font-size: 14px;
   width: 16%;
-  border: 1.5pt solid black;
+  border: 1.1pt solid black;
 }
 
 #start-game-button {
-  top: 17vh;
-  margin: 0 auto !important;
+  /* position: absolute; */
+  margin: auto;
+    margin-top: 22vh;
   display: block;
-      width: fit-content;
+  width: fit-content;
   padding: 2px;
   font-size: 18px;
   text-align: center;
   text-decoration: none;
-  background-color: #ececda;
-  color: black;
+  /* background-color: #ececda; */
+  color: #ececda;
+  border: 1.1pt solid #ececda;
   /* -webkit-text-stroke: 1pt #ececda; */
   z-index: 1;
 }
@@ -116,22 +118,22 @@ html, body {
 @media screen and (max-width:580px) {
   .intro {
       top: 4vh;
-    width: 85%;
-  height: 55%;}
+      width: 82%;
+  height: 55%;
+      margin-top: 2vh;
+
+}
 
   .title{
     font-size: 18px;
   }
 
   .instructions {
-    font-size: 12pt;
-        width: 94%;
+    font-size: 9pt;
+        width: 89%;
   }
 
   #start-game-button {
-      top: 10vh;
-      margin: 0 auto !important;
-      display: block;
-      width: 30%;
+font-size: 12pt;
     }
 }
