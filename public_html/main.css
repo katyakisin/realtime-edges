@@ -1,10 +1,9 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  overflow: hidden !important;
 }
 
-html, body {
+html {
   background-color: #000;
   box-sizing: border-box;
   margin: 0;
@@ -15,7 +14,6 @@ html, body {
 }
 
 body{
-    position: relative;
     overflow: hidden !important;
 }
 .intro {
