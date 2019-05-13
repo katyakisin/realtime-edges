@@ -121,4 +121,7 @@ html, body {
   .title{
     font-size: 18px;
   }
+  .instructions{
+    font-size: 10px;
+  }
 }
