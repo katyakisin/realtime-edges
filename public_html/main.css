@@ -72,31 +72,36 @@ body{
   border: 1.1pt solid black;
 }
 
-#start-game-button {
-  /* position: absolute; */
-  margin: auto;
-    margin-top: 22vh;
-  display: block;
-  width: fit-content;
-  padding: 2px;
-  font-size: 18px;
-  text-align: center;
-  text-decoration: none;
-  /* background-color: #ececda; */
-  color: #ececda;
-  border: 1.1pt solid #ececda;
-  /* -webkit-text-stroke: 1pt #ececda; */
-  z-index: 1;
+#start-game-button {    /* position: absolute; */
+    margin: auto;
+    margin-top: 50vh;
+    display: block;
+    width: fit-content;
+    padding: 2px;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    /* background-color: #ececda; */
+    color: #ececda;
+    border: 1.1pt solid #ececda;
+    /* -webkit-text-stroke: 1pt #ececda; */
+    z-index: 1;
 }
 
 @media screen and (min-width:1024px) {
   .intro {
     width: 58%;
+    height: 55%;
     top: 11vh;
   }
 
   #start-game-button {
     width: 12%;
+        margin-top: 70vh;
+        font-size: 12pt;
+  }
+  .instructions{
+    font-size: 14pt;
   }
 }
 
@@ -112,7 +117,7 @@ body{
 
 @media screen and (max-width:800px) {
   .intro{
-        height: 50%;
+            height: 70vh;
   }
 
   .title {
