@@ -81,7 +81,7 @@ function setup() {
 }
 
 function draw() {
-  $('#game-started').hide();
+  $('#game-started').css('display', 'block');
   // blendMode(OVERLAY);
   // noStroke();
     strokeWeight(2);
