@@ -48,7 +48,7 @@ socket.on('game-over', function() {
 
 // ***** START P5 STUFF *********
 
-let scalar = 0.3; //starting size
+let scalar = 0.2; //starting size
 let ringInc = 0.15;
 function setup() {
   createCanvas(windowWidth, windowHeight);
