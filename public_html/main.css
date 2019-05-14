@@ -22,11 +22,11 @@ body{
   position:absolute;
   top:0px;
   left:0px;
-  z-index: 1;
+  z-index: 999999;
 }
 
 .intro {
-  z-index: 10;
+  z-index: 999999999999999;
   position: relative;
   background-color: #ececda;
   margin: auto;
@@ -91,7 +91,7 @@ body{
     color: #ececda;
     border: 1.1pt solid #ececda;
     /* -webkit-text-stroke: 1pt #ececda; */
-    z-index:9;
+    z-index: 9999999999;
 }
 
 
