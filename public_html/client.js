@@ -65,6 +65,7 @@ function setup() {
   $('#start-game-button').on('click', function() {
     socket.emit('start-the-game'); //send the game start to the server.
     background(0);
+    $('#game-started').show();
   })
 
   //server tells us that the game has started.
@@ -74,11 +75,13 @@ function setup() {
     $('#start-game-button').hide()
     background(0);
 
+
   })
 
 }
 
 function draw() {
+  $('#game-started').hide();
   // blendMode(OVERLAY);
   // noStroke();
     strokeWeight(2);

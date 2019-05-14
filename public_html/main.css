@@ -88,6 +88,15 @@ body{
     z-index: 1;
 }
 
+
+#game-running{
+  display: none;
+    color: #ececda;
+    margin:auto;
+margin-top: 5vh;
+    width: fit-content;
+}
+
 @media screen and (min-width:1024px) {
   .intro {
     width: 58%;
