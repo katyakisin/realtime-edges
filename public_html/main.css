@@ -18,6 +18,11 @@ body{
     overflow: hidden !important;
 }
 
+#defaultCanvas0{
+  position:absolute;
+  top:0px;
+  left:0px;
+}
 
 .intro {
   z-index: 10;
