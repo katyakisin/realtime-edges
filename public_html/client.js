@@ -48,7 +48,7 @@ socket.on('game-over', function() {
 
 // ***** START P5 STUFF *********
 
-let scalar = 0.3; //starting size
+let scalar = 0.2; //starting size
 let ringInc = 0.15;
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -65,6 +65,7 @@ function setup() {
   $('#start-game-button').on('click', function() {
     socket.emit('start-the-game'); //send the game start to the server.
     background(0);
+    $('#game-started').show();
   })
 
   //server tells us that the game has started.
@@ -73,6 +74,7 @@ function setup() {
     scalar = 0.3;
     $('#start-game-button').hide()
     background(0);
+
 
   })
 
