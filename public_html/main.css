@@ -18,15 +18,9 @@ body{
     overflow: hidden !important;
 }
 
-.p5Canvas{
-  position:absolute;
-  top:0px;
-  left:0px;
-  z-index: 100;
-}
 
 .intro {
-  z-index: 99999;
+  z-index: 10;
   position: relative;
   background-color: #ececda;
   margin: auto;
@@ -78,16 +72,12 @@ body{
   border: 1.1pt solid black;
 }
 
-#start-game-button {
-  position: absolute;
-  top:50%;
-  left:50%;
-  z-index:9999; /* position: absolute; */
-    /* margin: auto; */
-    /* margin-top: 50vh; */
+#start-game-button {    /* position: absolute; */
+    margin: auto;
+    margin-top: 50vh;
     display: block;
     width: fit-content;
-    /* padding: 2px; */
+    padding: 2px;
     font-size: 15px;
     text-align: center;
     text-decoration: none;
@@ -95,15 +85,15 @@ body{
     color: #ececda;
     border: 1.1pt solid #ececda;
     /* -webkit-text-stroke: 1pt #ececda; */
-    /* z-index: 9999999999; */
+    z-index: 1;
 }
 
 
 #game-running{
-  display: NONE;
+  display: none;
     color: #ececda;
     margin:auto;
-margin-top: 30vh;
+margin-top: 25vh;
     width: fit-content;
 }
 
@@ -114,11 +104,11 @@ margin-top: 30vh;
     top: 11vh;
   }
 
-  /* #start-game-button {
+  #start-game-button {
     width: 12%;
         margin-top: 70vh;
         font-size: 12pt;
-  } */
+  }
   .instructions{
     font-size: 14pt;
   }
@@ -158,7 +148,7 @@ margin-top: 30vh;
   .intro {
       top: 4vh;
       width: 82%;
-      height: 55%;
+  height: 55%;
       margin-top: 2vh;
 
 }
